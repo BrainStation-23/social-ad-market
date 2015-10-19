@@ -1,33 +1,33 @@
 //
-//  BSProfileViewController.m
+//  SAMProfileViewController.m
 //  SocialAdMarket
 //
 //  Created by BS23 on 10/13/15.
 //  Copyright (c) 2015 Brainstation-23. All rights reserved.
 //
 
-#import "BSProfileViewController.h"
+#import "SAMProfileViewController.h"
 #import <AFNetworking.h>
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 #import "SVProgressHUD.h"
 #import "SwappedOfferDetails.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 
-@interface BSProfileViewController (){
-    BSUserPropertiesAndAssets *userAssets;
+@interface SAMProfileViewController (){
+    SAMUserPropertiesAndAssets *userAssets;
     NSMutableArray *swapppedOffers;
 }
 
 @end
 static AFHTTPRequestOperationManager *manager;
 
-@implementation BSProfileViewController
+@implementation SAMProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate=self;
    
-    userAssets=[BSUserPropertiesAndAssets sharedInstance];
+    userAssets=[SAMUserPropertiesAndAssets sharedInstance];
     self.userName.text= [[userAssets getUerInformation] objectForKey:@"userName"];
     
     swapppedOffers = [[NSMutableArray alloc] init];
@@ -84,7 +84,7 @@ static AFHTTPRequestOperationManager *manager;
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PopularPayTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"swappedOfferCell"];
+    SAMTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"swappedOfferCell"];
     SwappedOfferDetails *offer =[swapppedOffers objectAtIndex:indexPath.row];
     
     cell.ppTitle.text= offer.Title;
@@ -144,15 +144,15 @@ static AFHTTPRequestOperationManager *manager;
     UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     if(sender.tag==1){
-        SocialAddMarketViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"BSMainViewController"];
+        SocialAddMarketViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(sender.tag==2){
-        BSMapViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"BSMapViewController"];
+        SAMMapViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"MapViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(sender.tag==3){
-        BSMessageViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"BSMessageViewController"];
+        SAMMessageViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"MessageViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

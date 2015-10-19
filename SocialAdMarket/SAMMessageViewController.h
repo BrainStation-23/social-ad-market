@@ -1,5 +1,5 @@
 //
-//  BSMessageViewController.h
+//  SAMMessageViewController.h
 //  SocialAdMarket
 //
 //  Created by BS23 on 10/13/15.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-#import "BSMapViewController.h"
-#import "BSProfileViewController.h"
+#import "SAMMapViewController.h"
+#import "SAMProfileViewController.h"
 #import "SocialAddMarketViewController.h"
 
 
-@interface BSMessageViewController : BaseViewController<BaseViewControllerDelegate>
+@interface SAMMessageViewController : BaseViewController<BaseViewControllerDelegate>
 
 @property(nonatomic,strong) IBOutlet UILabel *placeHolderTextLabel;
 @end

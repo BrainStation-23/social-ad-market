@@ -10,7 +10,7 @@
         <!--Social Add Market View Controller-->
         <scene sceneID="p80-r7-RvL">
             <objects>
-                <viewController storyboardIdentifier="BSMainViewController" id="7uI-WI-utb" customClass="SocialAddMarketViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="7uI-WI-utb" customClass="SocialAddMarketViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IgG-vo-bmu"/>
                         <viewControllerLayoutGuide type="bottom" id="OZH-tM-Yx6"/>
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="offerCell" rowHeight="71" id="dyh-3c-shd" customClass="PopularPayTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="offerCell" rowHeight="71" id="dyh-3c-shd" customClass="SAMTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dyh-3c-shd" id="e42-aG-xnv">
@@ -133,7 +133,7 @@
         <!--Offer Short Details View Controller-->
         <scene sceneID="1BD-pP-PVe">
             <objects>
-                <viewController storyboardIdentifier="OfferShortDetailsViewController" id="Ql3-ig-lEn" customClass="BSOfferShortDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OfferShortDetailsViewController" id="Ql3-ig-lEn" customClass="SAMOfferShortDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lPr-jc-mhW"/>
                         <viewControllerLayoutGuide type="bottom" id="AHP-io-SaH"/>
@@ -318,7 +318,7 @@
         <!--Profile View Controller-->
         <scene sceneID="PPA-et-iO1">
             <objects>
-                <viewController storyboardIdentifier="BSProfileViewController" id="hoC-eT-qGT" customClass="BSProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="hoC-eT-qGT" customClass="SAMProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Hg-ca-HVJ"/>
                         <viewControllerLayoutGuide type="bottom" id="QJh-zk-BH9"/>
@@ -353,7 +353,7 @@
                                 <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="swappedOfferCell" rowHeight="71" id="hNF-qt-vIR" customClass="PopularPayTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="swappedOfferCell" rowHeight="71" id="hNF-qt-vIR" customClass="SAMTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hNF-qt-vIR" id="KtQ-Px-rjc">
@@ -475,7 +475,7 @@
         <!--Message View Controller-->
         <scene sceneID="hfE-fo-qdr">
             <objects>
-                <viewController storyboardIdentifier="BSMessageViewController" id="rRe-8C-vzQ" customClass="BSMessageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewController" id="rRe-8C-vzQ" customClass="SAMMessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="njX-p6-Qet"/>
                         <viewControllerLayoutGuide type="bottom" id="vLi-IP-swx"/>
@@ -716,7 +716,7 @@
         <!--Map View Controller-->
         <scene sceneID="BTy-FM-b7P">
             <objects>
-                <viewController storyboardIdentifier="BSMapViewController" id="uuz-OW-cL1" customClass="BSMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="uuz-OW-cL1" customClass="SAMMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ztz-Hu-FtT"/>
                         <viewControllerLayoutGuide type="bottom" id="Qpy-0C-lg0"/>

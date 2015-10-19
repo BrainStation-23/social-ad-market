@@ -18,7 +18,7 @@
 @interface SocialAddMarketViewController (){
     UIStoryboard *storyBoard;
     BSLoginViewController *loginViewController;
-    BSUserPropertiesAndAssets *userAssets;
+    SAMUserPropertiesAndAssets *userAssets;
     OfferLogic *offerLogic;
     
     UIImageView *offerEnlargedImage;
@@ -40,7 +40,7 @@
     [SVProgressHUD showWithStatus:@"Loading..."];
     offerLogic.delegate = self;
     [offerLogic setUserOffers:0];
-    userAssets =[BSUserPropertiesAndAssets sharedInstance];
+    userAssets =[SAMUserPropertiesAndAssets sharedInstance];
    
     //self.offers = [user getOfferList];
     
@@ -80,17 +80,17 @@
     
     if(sender.tag==2){
         DELEGATE.segmentedView.hidden=YES;
-        BSMapViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"BSMapViewController"];
+        SAMMapViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"MapViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(sender.tag==3){
         DELEGATE.segmentedView.hidden=YES;
-        BSMessageViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"BSMessageViewController"];
+        SAMMessageViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"MessageViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(sender.tag==4){
         DELEGATE.segmentedView.hidden=NO;
-        BSProfileViewController *vc= [storyBoard instantiateViewControllerWithIdentifier:@"BSProfileViewController"];
+        SAMProfileViewController *vc= [storyBoard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
@@ -137,7 +137,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PopularPayTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"offerCell"];
+    SAMTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:@"offerCell"];
     BSOfferDetails *offer =[self.offers objectAtIndex:indexPath.row];
 
     cell.ppTitle.text= offer.Title;
@@ -176,7 +176,7 @@
     CGRect cellFrameInTableView = [tableView rectForRowAtIndexPath:indexPath];
     CGRect cellFrameInSuperview = [tableView convertRect:cellFrameInTableView toView:[tableView superview]];
     
-    BSOfferShortDetailsViewController* detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"OfferShortDetailsViewController"];
+    SAMOfferShortDetailsViewController* detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"OfferShortDetailsViewController"];
     
     BSOfferDetails *offer = [self.offers objectAtIndex:indexPath.row];
     detailViewController.offer = offer;

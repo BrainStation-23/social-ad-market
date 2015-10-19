@@ -12,14 +12,14 @@
 #import "Constants.h"
 #import "BSLoginViewController.h"
 #import "BSCustomSegmentedView.h"
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 #import "OfferLogic.h"
-#import "PopularPayTableViewCell.h"
-#import "BSOfferShortDetailsViewController.h"
+#import "SAMTableViewCell.h"
+#import "SAMOfferShortDetailsViewController.h"
 #import "BaseViewController.h"
-#import "BSMapViewController.h"
-#import "BSMessageViewController.h"
-#import "BSProfileViewController.h"
+#import "SAMMapViewController.h"
+#import "SAMMessageViewController.h"
+#import "SAMProfileViewController.h"
 
 @interface SocialAddMarketViewController : BaseViewController<BaseViewControllerDelegate, BSCustomSegmentedViewDelegate, UITableViewDataSource, UITableViewDelegate,OfferLogicDelegate>
 

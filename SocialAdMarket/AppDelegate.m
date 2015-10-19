@@ -28,7 +28,7 @@
                         stringForKey:@"UserID"];
     
     if(userID.length){
-        SocialAddMarketViewController *homeViewController = [storyBoard instantiateViewControllerWithIdentifier:@"BSMainViewController"];
+        SocialAddMarketViewController *homeViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
         self.customNav = [[UINavigationController alloc] initWithRootViewController:homeViewController];
         self.window.rootViewController = self.customNav;
         

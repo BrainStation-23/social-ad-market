@@ -16,7 +16,7 @@
 		6C028D471BD4FC3F00CA393C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C028D461BD4FC3F00CA393C /* QuartzCore.framework */; };
 		6C028D491BD4FC4500CA393C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C028D481BD4FC4500CA393C /* MessageUI.framework */; };
 		6C028D4B1BD4FC5000CA393C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C028D4A1BD4FC5000CA393C /* MapKit.framework */; };
-		6C028D5B1BD4FCF500CA393C /* BSUserPropertiesAndAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D541BD4FCF500CA393C /* BSUserPropertiesAndAssets.m */; };
+		6C028D5B1BD4FCF500CA393C /* SAMUserPropertiesAndAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D541BD4FCF500CA393C /* SAMUserPropertiesAndAssets.m */; };
 		6C028D5C1BD4FCF500CA393C /* BSOfferDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D561BD4FCF500CA393C /* BSOfferDetails.m */; };
 		6C028D5D1BD4FCF500CA393C /* OfferLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D581BD4FCF500CA393C /* OfferLogic.m */; };
 		6C028D5E1BD4FCF500CA393C /* SwappedOfferDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D5A1BD4FCF500CA393C /* SwappedOfferDetails.m */; };
@@ -35,16 +35,16 @@
 		6C028D7A1BD4FD3000CA393C /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D791BD4FD3000CA393C /* BSLoginViewController.m */; };
 		6C028D7E1BD4FD4000CA393C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D7D1BD4FD4000CA393C /* BaseViewController.m */; };
 		6C028D921BD4FD8A00CA393C /* SocialAddMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D811BD4FD8A00CA393C /* SocialAddMarketViewController.m */; };
-		6C028D931BD4FD8A00CA393C /* BSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D831BD4FD8A00CA393C /* BSProfileViewController.m */; };
-		6C028D941BD4FD8A00CA393C /* BSMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D851BD4FD8A00CA393C /* BSMessageViewController.m */; };
-		6C028D951BD4FD8A00CA393C /* BSMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D871BD4FD8A00CA393C /* BSMapViewController.m */; };
-		6C028D961BD4FD8A00CA393C /* BSOfferShortDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D891BD4FD8A00CA393C /* BSOfferShortDetailsViewController.m */; };
+		6C028D931BD4FD8A00CA393C /* SAMProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */; };
+		6C028D941BD4FD8A00CA393C /* SAMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D851BD4FD8A00CA393C /* SAMMessageViewController.m */; };
+		6C028D951BD4FD8A00CA393C /* SAMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */; };
+		6C028D961BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D891BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m */; };
 		6C028D971BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D8B1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m */; };
 		6C028D981BD4FD8A00CA393C /* SAMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D8D1BD4FD8A00CA393C /* SAMSettingsViewController.m */; };
 		6C028D991BD4FD8A00CA393C /* SAMChangeEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D8F1BD4FD8A00CA393C /* SAMChangeEmailViewController.m */; };
 		6C028D9A1BD4FD8A00CA393C /* SuggestMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D911BD4FD8A00CA393C /* SuggestMerchantViewController.m */; };
 		6C028D9C1BD4FDB700CA393C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C028D9B1BD4FDB700CA393C /* Main.storyboard */; };
-		6C028DA01BD4FE4100CA393C /* PopularPayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D9F1BD4FE4100CA393C /* PopularPayTableViewCell.m */; };
+		6C028DA01BD4FE4100CA393C /* SAMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D9F1BD4FE4100CA393C /* SAMTableViewCell.m */; };
 		6C028DAA1BD4FE5600CA393C /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028DA31BD4FE5600CA393C /* DWBubbleMenuButton.m */; };
 		6C028DAB1BD4FE5600CA393C /* BSAuthenticationUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028DA51BD4FE5600CA393C /* BSAuthenticationUIWebView.m */; };
 		6C028DAC1BD4FE5600CA393C /* BSCustomSegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028DA71BD4FE5600CA393C /* BSCustomSegmentedView.m */; };
@@ -97,8 +97,8 @@
 		6C028D481BD4FC4500CA393C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6C028D4A1BD4FC5000CA393C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6C028D521BD4FCF500CA393C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		6C028D531BD4FCF500CA393C /* BSUserPropertiesAndAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserPropertiesAndAssets.h; sourceTree = "<group>"; };
-		6C028D541BD4FCF500CA393C /* BSUserPropertiesAndAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserPropertiesAndAssets.m; sourceTree = "<group>"; };
+		6C028D531BD4FCF500CA393C /* SAMUserPropertiesAndAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMUserPropertiesAndAssets.h; sourceTree = "<group>"; };
+		6C028D541BD4FCF500CA393C /* SAMUserPropertiesAndAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMUserPropertiesAndAssets.m; sourceTree = "<group>"; };
 		6C028D551BD4FCF500CA393C /* BSOfferDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSOfferDetails.h; sourceTree = "<group>"; };
 		6C028D561BD4FCF500CA393C /* BSOfferDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSOfferDetails.m; sourceTree = "<group>"; };
 		6C028D571BD4FCF500CA393C /* OfferLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferLogic.h; sourceTree = "<group>"; };
@@ -123,14 +123,14 @@
 		6C028D7D1BD4FD4000CA393C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6C028D801BD4FD8A00CA393C /* SocialAddMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAddMarketViewController.h; sourceTree = "<group>"; };
 		6C028D811BD4FD8A00CA393C /* SocialAddMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAddMarketViewController.m; sourceTree = "<group>"; };
-		6C028D821BD4FD8A00CA393C /* BSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSProfileViewController.h; sourceTree = "<group>"; };
-		6C028D831BD4FD8A00CA393C /* BSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSProfileViewController.m; sourceTree = "<group>"; };
-		6C028D841BD4FD8A00CA393C /* BSMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMessageViewController.h; sourceTree = "<group>"; };
-		6C028D851BD4FD8A00CA393C /* BSMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMessageViewController.m; sourceTree = "<group>"; };
-		6C028D861BD4FD8A00CA393C /* BSMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMapViewController.h; sourceTree = "<group>"; };
-		6C028D871BD4FD8A00CA393C /* BSMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMapViewController.m; sourceTree = "<group>"; };
-		6C028D881BD4FD8A00CA393C /* BSOfferShortDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSOfferShortDetailsViewController.h; sourceTree = "<group>"; };
-		6C028D891BD4FD8A00CA393C /* BSOfferShortDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSOfferShortDetailsViewController.m; sourceTree = "<group>"; };
+		6C028D821BD4FD8A00CA393C /* SAMProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMProfileViewController.h; sourceTree = "<group>"; };
+		6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMProfileViewController.m; sourceTree = "<group>"; };
+		6C028D841BD4FD8A00CA393C /* SAMMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMMessageViewController.h; sourceTree = "<group>"; };
+		6C028D851BD4FD8A00CA393C /* SAMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMMessageViewController.m; sourceTree = "<group>"; };
+		6C028D861BD4FD8A00CA393C /* SAMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMMapViewController.h; sourceTree = "<group>"; };
+		6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMMapViewController.m; sourceTree = "<group>"; };
+		6C028D881BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMOfferShortDetailsViewController.h; sourceTree = "<group>"; };
+		6C028D891BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMOfferShortDetailsViewController.m; sourceTree = "<group>"; };
 		6C028D8A1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemElaborateDetailsViewController.h; sourceTree = "<group>"; };
 		6C028D8B1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemElaborateDetailsViewController.m; sourceTree = "<group>"; };
 		6C028D8C1BD4FD8A00CA393C /* SAMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMSettingsViewController.h; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 		6C028D901BD4FD8A00CA393C /* SuggestMerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestMerchantViewController.h; sourceTree = "<group>"; };
 		6C028D911BD4FD8A00CA393C /* SuggestMerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestMerchantViewController.m; sourceTree = "<group>"; };
 		6C028D9B1BD4FDB700CA393C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6C028D9E1BD4FE4100CA393C /* PopularPayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularPayTableViewCell.h; sourceTree = "<group>"; };
-		6C028D9F1BD4FE4100CA393C /* PopularPayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularPayTableViewCell.m; sourceTree = "<group>"; };
+		6C028D9E1BD4FE4100CA393C /* SAMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTableViewCell.h; sourceTree = "<group>"; };
+		6C028D9F1BD4FE4100CA393C /* SAMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMTableViewCell.m; sourceTree = "<group>"; };
 		6C028DA21BD4FE5600CA393C /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		6C028DA31BD4FE5600CA393C /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
 		6C028DA41BD4FE5600CA393C /* BSAuthenticationUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAuthenticationUIWebView.h; sourceTree = "<group>"; };
@@ -340,8 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				6C028D521BD4FCF500CA393C /* Constants.h */,
-				6C028D531BD4FCF500CA393C /* BSUserPropertiesAndAssets.h */,
-				6C028D541BD4FCF500CA393C /* BSUserPropertiesAndAssets.m */,
+				6C028D531BD4FCF500CA393C /* SAMUserPropertiesAndAssets.h */,
+				6C028D541BD4FCF500CA393C /* SAMUserPropertiesAndAssets.m */,
 				6C028D551BD4FCF500CA393C /* BSOfferDetails.h */,
 				6C028D561BD4FCF500CA393C /* BSOfferDetails.m */,
 				6C028D571BD4FCF500CA393C /* OfferLogic.h */,
@@ -384,14 +384,14 @@
 			children = (
 				6C028D801BD4FD8A00CA393C /* SocialAddMarketViewController.h */,
 				6C028D811BD4FD8A00CA393C /* SocialAddMarketViewController.m */,
-				6C028D821BD4FD8A00CA393C /* BSProfileViewController.h */,
-				6C028D831BD4FD8A00CA393C /* BSProfileViewController.m */,
-				6C028D841BD4FD8A00CA393C /* BSMessageViewController.h */,
-				6C028D851BD4FD8A00CA393C /* BSMessageViewController.m */,
-				6C028D861BD4FD8A00CA393C /* BSMapViewController.h */,
-				6C028D871BD4FD8A00CA393C /* BSMapViewController.m */,
-				6C028D881BD4FD8A00CA393C /* BSOfferShortDetailsViewController.h */,
-				6C028D891BD4FD8A00CA393C /* BSOfferShortDetailsViewController.m */,
+				6C028D821BD4FD8A00CA393C /* SAMProfileViewController.h */,
+				6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */,
+				6C028D841BD4FD8A00CA393C /* SAMMessageViewController.h */,
+				6C028D851BD4FD8A00CA393C /* SAMMessageViewController.m */,
+				6C028D861BD4FD8A00CA393C /* SAMMapViewController.h */,
+				6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */,
+				6C028D881BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.h */,
+				6C028D891BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m */,
 				6C028D8A1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.h */,
 				6C028D8B1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m */,
 				6C028D8C1BD4FD8A00CA393C /* SAMSettingsViewController.h */,
@@ -407,8 +407,8 @@
 		6C028D9D1BD4FDEB00CA393C /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				6C028D9E1BD4FE4100CA393C /* PopularPayTableViewCell.h */,
-				6C028D9F1BD4FE4100CA393C /* PopularPayTableViewCell.m */,
+				6C028D9E1BD4FE4100CA393C /* SAMTableViewCell.h */,
+				6C028D9F1BD4FE4100CA393C /* SAMTableViewCell.m */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -656,22 +656,22 @@
 				6C028DDD1BD4FED100CA393C /* SDWebImageManager.m in Sources */,
 				6C028D7E1BD4FD4000CA393C /* BaseViewController.m in Sources */,
 				6C028DAC1BD4FE5600CA393C /* BSCustomSegmentedView.m in Sources */,
-				6C028D5B1BD4FCF500CA393C /* BSUserPropertiesAndAssets.m in Sources */,
+				6C028D5B1BD4FCF500CA393C /* SAMUserPropertiesAndAssets.m in Sources */,
 				6C028DD91BD4FED100CA393C /* SDWebImageCompat.m in Sources */,
 				6C028DDC1BD4FED100CA393C /* SDWebImageDownloaderOperation.m in Sources */,
 				6C028D241BD4FC0A00CA393C /* AppDelegate.m in Sources */,
-				6C028D961BD4FD8A00CA393C /* BSOfferShortDetailsViewController.m in Sources */,
+				6C028D961BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m in Sources */,
 				6C028DE41BD4FED100CA393C /* UIImageView+WebCache.m in Sources */,
 				6C028D921BD4FD8A00CA393C /* SocialAddMarketViewController.m in Sources */,
 				6C028D981BD4FD8A00CA393C /* SAMSettingsViewController.m in Sources */,
 				6C028D991BD4FD8A00CA393C /* SAMChangeEmailViewController.m in Sources */,
 				6C028DE31BD4FED100CA393C /* UIImageView+HighlightedWebCache.m in Sources */,
-				6C028DA01BD4FE4100CA393C /* PopularPayTableViewCell.m in Sources */,
+				6C028DA01BD4FE4100CA393C /* SAMTableViewCell.m in Sources */,
 				6C028DB31BD4FEA100CA393C /* SVProgressHUD.m in Sources */,
-				6C028D941BD4FD8A00CA393C /* BSMessageViewController.m in Sources */,
+				6C028D941BD4FD8A00CA393C /* SAMMessageViewController.m in Sources */,
 				6C028DE01BD4FED100CA393C /* UIImage+GIF.m in Sources */,
 				6C028DE11BD4FED100CA393C /* UIImage+MultiFormat.m in Sources */,
-				6C028D931BD4FD8A00CA393C /* BSProfileViewController.m in Sources */,
+				6C028D931BD4FD8A00CA393C /* SAMProfileViewController.m in Sources */,
 				6C028DE21BD4FED100CA393C /* UIImage+WebP.m in Sources */,
 				6C028DDE1BD4FED100CA393C /* SDWebImagePrefetcher.m in Sources */,
 				6C028D5D1BD4FCF500CA393C /* OfferLogic.m in Sources */,
@@ -684,7 +684,7 @@
 				6C028DDF1BD4FED100CA393C /* UIButton+WebCache.m in Sources */,
 				6C028D211BD4FC0A00CA393C /* main.m in Sources */,
 				6C028DD71BD4FED100CA393C /* NSData+ImageContentType.m in Sources */,
-				6C028D951BD4FD8A00CA393C /* BSMapViewController.m in Sources */,
+				6C028D951BD4FD8A00CA393C /* SAMMapViewController.m in Sources */,
 				6C028D971BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m in Sources */,
 				6C028DD81BD4FED100CA393C /* SDImageCache.m in Sources */,
 				6C028DAB1BD4FE5600CA393C /* BSAuthenticationUIWebView.m in Sources */,
@@ -811,6 +811,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "869861cb-d540-4f60-b6cb-21e9c02a1499";
 			};
 			name = Debug;
 		};
@@ -823,6 +824,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "869861cb-d540-4f60-b6cb-21e9c02a1499";
 			};
 			name = Release;
 		};

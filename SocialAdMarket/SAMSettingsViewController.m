@@ -7,12 +7,12 @@
 //
 
 #import "SAMSettingsViewController.h"
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 #import "SAMChangeEmailViewController.h"
 
 @interface SAMSettingsViewController (){
     NSArray *sectionLabelArray;
-    BSUserPropertiesAndAssets *userAssets;
+    SAMUserPropertiesAndAssets *userAssets;
     MFMailComposeViewController *mailComposer;
     SAMChangeEmailViewController *changeEmailViewController;
     SuggestMerchantViewController *suggestMerchantViewController;
@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    userAssets =[BSUserPropertiesAndAssets sharedInstance];
+    userAssets =[SAMUserPropertiesAndAssets sharedInstance];
     sectionLabelArray =[[NSArray alloc]initWithObjects:@"Help", @"Contact", @"General", nil];
 }
 

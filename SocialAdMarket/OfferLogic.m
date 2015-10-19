@@ -7,7 +7,7 @@
 //
 
 #import "OfferLogic.h"
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 #import "AppDelegate.h"
 
 CLLocationManager *locationManager;
@@ -20,7 +20,7 @@ static AFHTTPRequestOperationManager *manager;
 @synthesize offerList;
 
 -(void)setUserOffers:(NSInteger)pageIndex{
-    BSUserPropertiesAndAssets *userWithOffers = [BSUserPropertiesAndAssets sharedInstance];
+    SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
     manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
@@ -111,7 +111,7 @@ static AFHTTPRequestOperationManager *manager;
             }];
 }
 -(void)setUserWithUserID:(NSString*)userId andOfferList:(NSMutableArray*)offerList{
-    BSUserPropertiesAndAssets *userWithOffers=[BSUserPropertiesAndAssets sharedInstance];
+    SAMUserPropertiesAndAssets *userWithOffers=[SAMUserPropertiesAndAssets sharedInstance];
     [userWithOffers setUserID:userId];
     [userWithOffers setOfferList:offerList];
 }

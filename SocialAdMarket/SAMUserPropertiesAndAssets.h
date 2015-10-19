@@ -1,5 +1,5 @@
 //
-//  BSUserPropertiesAndAssets.h
+//  SAMUserPropertiesAndAssets.h
 //  SocialAdMarket
 //
 //  Created by BS-126 on 9/28/15.
@@ -12,14 +12,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import "BSOfferDetails.h"
 
-@interface BSUserPropertiesAndAssets : NSObject{
+@interface SAMUserPropertiesAndAssets : NSObject{
   NSString *userId;
   CLLocation *currentLocation;
   NSDictionary *userInformation;
   NSMutableArray *offerList;
   NSMutableDictionary *detailsOfferList;
 }
-+(BSUserPropertiesAndAssets*) sharedInstance;
++(SAMUserPropertiesAndAssets*) sharedInstance;
 
 //setter
 -(void)setUserID:(NSString*)currentUserId;

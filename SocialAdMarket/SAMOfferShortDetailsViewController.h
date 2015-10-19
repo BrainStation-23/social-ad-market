@@ -1,5 +1,5 @@
 //
-//  BSItemShortDetailsViewViewController.h
+//  SAMOfferShortDetailsViewController.h
 //  SocialAdMarket
 //
 //  Created by Mahjabin Alam on 9/29/15.
@@ -15,7 +15,7 @@
 #define IMAGEVIEW_Y_ORIGIN 15
 
 
-@interface BSOfferShortDetailsViewController : UIViewController<UIAlertViewDelegate>
+@interface SAMOfferShortDetailsViewController : UIViewController<UIAlertViewDelegate>
 
 @property(nonatomic, strong) IBOutlet UIImageView *enlargedImageView;
 @property(nonatomic, strong) IBOutlet BSShortDescriptionView *shortDescriptionView;

@@ -1,5 +1,5 @@
 //
-//  BSMapViewController.h
+//  SAMMapViewController.h
 //  SocialAdMarket
 //
 //  Created by BS23 on 10/13/15.
@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "BaseViewController.h"
-#import "BSMessageViewController.h"
-#import "BSProfileViewController.h"
+#import "SAMMessageViewController.h"
+#import "SAMProfileViewController.h"
 #import "SocialAddMarketViewController.h"
 
 
-@interface BSMapViewController : BaseViewController<BaseViewControllerDelegate>
+@interface SAMMapViewController : BaseViewController<BaseViewControllerDelegate>
 
 @property(nonatomic, strong) IBOutlet MKMapView *mapView;
 

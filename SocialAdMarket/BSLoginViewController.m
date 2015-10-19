@@ -15,7 +15,7 @@
 static AFHTTPRequestOperationManager *manager;
 
 @interface BSLoginViewController (){
-    BSUserPropertiesAndAssets *userWithOffers;
+    SAMUserPropertiesAndAssets *userWithOffers;
     
 }
 
@@ -137,7 +137,7 @@ static AFHTTPRequestOperationManager *manager;
 
 - (void)authenticatedSuccess:(BOOL)success result:(NSMutableDictionary *)result {
     
-    userWithOffers =[BSUserPropertiesAndAssets sharedInstance];
+    userWithOffers =[SAMUserPropertiesAndAssets sharedInstance];
     self.resultParameters = result;
     
     if ([result objectForKey:@"expires_in"] != nil) {
@@ -227,7 +227,7 @@ static AFHTTPRequestOperationManager *manager;
                             [self setUserWithUserID:userId andOfferList:offerList];
                             
                             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                            SocialAddMarketViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"BSMainViewController"];
+                            SocialAddMarketViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
                             
                             UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:vc];
                             

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BSOfferDetails.h"
 #import "Constants.h"
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 #import <Foundation/Foundation.h>
 #import "BSAuthenticationUIWebView.h"
 #import <CoreLocation/CoreLocation.h>

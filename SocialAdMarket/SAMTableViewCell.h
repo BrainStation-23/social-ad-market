@@ -1,5 +1,5 @@
 //
-//  PopularPayTableViewCell.h
+//  SAMTableViewCell.h
 //  SocialAdMarket
 //
 //  Created by Mahjabin Alam on 9/29/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PopularPayTableViewCell : UITableViewCell
+@interface SAMTableViewCell : UITableViewCell
 
 @property(nonatomic, strong) IBOutlet UILabel *ppTitle;
 @property(nonatomic, strong) IBOutlet UILabel *ppSubTitle;

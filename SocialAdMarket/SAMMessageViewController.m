@@ -1,22 +1,24 @@
 //
-//  BSMapViewController.m
+//  SAMMessageViewController.m
 //  SocialAdMarket
 //
 //  Created by BS23 on 10/13/15.
 //  Copyright (c) 2015 Brainstation-23. All rights reserved.
 //
 
-#import "BSMapViewController.h"
+#import "SAMMessageViewController.h"
 
-@interface BSMapViewController ()
+@interface SAMMessageViewController ()
 
 @end
 
-@implementation BSMapViewController
+@implementation SAMMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate=self;
+    self.placeHolderTextLabel.text = @"When a merchant wants to contact you about a paid gig or swap the messages will appear here.";
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,15 +38,15 @@
     UIStoryboard *storyBoard =[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     if(sender.tag==1){
-        SocialAddMarketViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"BSMainViewController"];
+        SocialAddMarketViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else if(sender.tag==3){
-        BSMessageViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"BSMessageViewController"];
+    else if(sender.tag==2){
+        SAMMapViewController *vc =[storyBoard instantiateViewControllerWithIdentifier:@"MapViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if(sender.tag==4){
-        BSProfileViewController *vc= [storyBoard instantiateViewControllerWithIdentifier:@"BSProfileViewController"];
+        SAMProfileViewController *vc= [storyBoard instantiateViewControllerWithIdentifier:@"ProfileViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

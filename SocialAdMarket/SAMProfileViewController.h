@@ -1,5 +1,5 @@
 //
-//  BSProfileViewController.h
+//  SAMProfileViewController.h
 //  SocialAdMarket
 //
 //  Created by BS23 on 10/13/15.
@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 #import "BaseViewController.h"
-#import "BSMapViewController.h"
-#import "BSMessageViewController.h"
+#import "SAMMapViewController.h"
+#import "SAMMessageViewController.h"
 #import "SocialAddMarketViewController.h"
 #import "SAMSettingsViewController.h"
-#import "PopularPayTableViewCell.h"
+#import "SAMTableViewCell.h"
 
-@interface BSProfileViewController : BaseViewController<BaseViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface SAMProfileViewController : BaseViewController<BaseViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) IBOutlet UILabel *userName;
 @property(nonatomic, strong) IBOutlet UITableView *swappedTable;

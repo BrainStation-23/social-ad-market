@@ -1,20 +1,20 @@
 //
-//  BSItemShortDetailsViewViewController.m
+//  SAMOfferShortDetailsViewController.m
 //  SocialAdMarket
 //
 //  Created by Mahjabin Alam on 9/29/15.
 //  Copyright (c) 2015 Brainstation-23. All rights reserved.
 //
 
-#import "BSOfferShortDetailsViewController.h"
-#include "BSUserPropertiesAndAssets.h"
+#import "SAMOfferShortDetailsViewController.h"
+#include "SAMUserPropertiesAndAssets.h"
 #import <AFNetworking.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SDWebImage/UIImageView+WebCache.h"
 
 static AFHTTPRequestOperationManager *manager;
 
-@interface BSOfferShortDetailsViewController (){
+@interface SAMOfferShortDetailsViewController (){
     CLLocationCoordinate2D offerLatAndLong;
     UITapGestureRecognizer *tapRecognizer;
     CLLocation *userLocation;
@@ -23,7 +23,7 @@ static AFHTTPRequestOperationManager *manager;
 
 @end
 
-@implementation BSOfferShortDetailsViewController
+@implementation SAMOfferShortDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +34,7 @@ static AFHTTPRequestOperationManager *manager;
     [self.view addGestureRecognizer:tapRecognizer];
     
     
-    BSUserPropertiesAndAssets *userWithOffers = [BSUserPropertiesAndAssets sharedInstance];
+    SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
     userLocation = [userWithOffers getCurrentLocation];
     manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
@@ -175,7 +175,7 @@ static AFHTTPRequestOperationManager *manager;
 
 - (IBAction)swapBtnAct:(id)sender {
     if([self canSwap]){
-        BSUserPropertiesAndAssets *userWithOffers = [BSUserPropertiesAndAssets sharedInstance];
+        SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
         [userWithOffers getUserID];
         manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer=[AFJSONResponseSerializer serializer];

@@ -1,22 +1,22 @@
 //
-//  BSUserPropertiesAndAssets.m
+//  SAMUserPropertiesAndAssets.m
 //  SocialAdMarket
 //
 //  Created by BS-126 on 9/28/15.
 //  Copyright (c) 2015 Brainstation-23. All rights reserved.
 //
 
-#import "BSUserPropertiesAndAssets.h"
+#import "SAMUserPropertiesAndAssets.h"
 
-static BSUserPropertiesAndAssets *instance;
+static SAMUserPropertiesAndAssets *instance;
 
-@implementation BSUserPropertiesAndAssets{
+@implementation SAMUserPropertiesAndAssets{
     AFHTTPRequestOperationManager *manager;
 }
 
-+ (BSUserPropertiesAndAssets *) sharedInstance{
++ (SAMUserPropertiesAndAssets *) sharedInstance{
     if(instance==nil){
-        instance = [[BSUserPropertiesAndAssets alloc]init];
+        instance = [[SAMUserPropertiesAndAssets alloc]init];
     }
     return instance;
 }
