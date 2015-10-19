@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSCustomSegmentedView.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+#define DELEGATE ((AppDelegate*)[[UIApplication sharedApplication]delegate])
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UINavigationController *customNav;
+@property (nonatomic, retain) BSCustomSegmentedView *segmentedView;
+
+@property(nonatomic, assign) NSInteger paginIndex;
+@property(nonatomic, assign) NSInteger totalPage;
 
 
 @end
-
