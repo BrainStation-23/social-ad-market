@@ -89,7 +89,7 @@ static AFHTTPRequestOperationManager *manager;
     
     cell.ppTitle.text= offer.Title;
     cell.ppSubTitle.text=offer.Title;
-    cell.ppDistance.text = [NSString stringWithFormat:@"%f",offer.Distance];
+    //cell.ppDistance.text = [NSString stringWithFormat:@"%f",offer.Distance];
     cell.ppFollowers.text = [NSString stringWithFormat:@"%ld", (long)offer.RequiredMinimumInstagramFollowers];
     
     

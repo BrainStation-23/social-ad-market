@@ -86,6 +86,7 @@ static AFHTTPRequestOperationManager *manager;
                                                    
                                                }
                                                if([self canSwap]){
+                                                   [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor greenColor]];
                                                    [self.shortDescriptionView.swapButton setTitle:@"Swap" forState:UIControlStateNormal];
                                                }
                                                else{

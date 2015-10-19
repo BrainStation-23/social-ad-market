@@ -142,7 +142,7 @@
 
     cell.ppTitle.text= offer.Title;
     cell.ppSubTitle.text=offer.Title;
-    cell.ppDistance.text = [NSString stringWithFormat:@"%f",[offer.Distance doubleValue]];
+    cell.ppDistance.text = [[NSString stringWithFormat:@"%0.2f",[offer.Distance doubleValue]] stringByAppendingString:@" km"];
     cell.ppFollowers.text = [NSString stringWithFormat:@"%ld",(long)[offer.RequiredMinimumInstagramFollowers integerValue]];
     
     
@@ -155,13 +155,9 @@
                                   progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                                       if (!activityIndicator) {
                                           [weakImageView addSubview:activityIndicator = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
-                                         // activityIndicator.center = weakImageView.center;
-                                       //   [activityIndicator startAnimating];
                                       }
                                   }
                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                    // [activityIndicator removeFromSuperview];
-                                     //activityIndicator = nil;
                                  }];
     }
     
