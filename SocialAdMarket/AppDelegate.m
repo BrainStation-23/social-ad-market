@@ -9,7 +9,14 @@
 #import "AppDelegate.h"
 #import "SocialAddMarketViewController.h"
 #import "BSLoginViewController.h"
-@interface AppDelegate ()
+#import "SAMUserPropertiesAndAssets.h"
+#import <CoreLocation/CoreLocation.h>
+
+@interface AppDelegate ()<CLLocationManagerDelegate>{
+    SAMUserPropertiesAndAssets *userWithOffers;
+    CLLocationManager *locationManager;
+    CLLocation *currentLocation;
+}
 
 @end
 
@@ -38,9 +45,27 @@
         self.window.rootViewController = self.customNav;
     }
     
-    
+    locationManager = [[CLLocationManager alloc] init] ;
+    locationManager.delegate=self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    if(IS_OS_8_OR_LATER){
+        NSUInteger code = [CLLocationManager authorizationStatus];
+        if (code == kCLAuthorizationStatusNotDetermined && ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
+            // choose one request according to your business.
+            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]){
+                [locationManager requestAlwaysAuthorization];
+            } else if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+                [locationManager  requestWhenInUseAuthorization];
+            } else {
+                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
+            }
+        }
+    }
+    [locationManager startUpdatingLocation];
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     
@@ -62,4 +87,21 @@
     
 }
 
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    currentLocation = newLocation;
+    
+    [userWithOffers setCurrentLocation:newLocation];
+    
+    NSLog(@"currentLocation===%@",currentLocation);
+    
+}
 @end

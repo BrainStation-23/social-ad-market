@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BSCustomSegmentedView.h"
 
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 #define DELEGATE ((AppDelegate*)[[UIApplication sharedApplication]delegate])
 

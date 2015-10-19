@@ -44,24 +44,6 @@ static AFHTTPRequestOperationManager *manager;
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
     
-    locationManager = [[CLLocationManager alloc] init] ;
-    locationManager.delegate=self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    if(IS_OS_8_OR_LATER){
-        NSUInteger code = [CLLocationManager authorizationStatus];
-        if (code == kCLAuthorizationStatusNotDetermined && ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
-            // choose one request according to your business.
-            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]){
-                [locationManager requestAlwaysAuthorization];
-            } else if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                [locationManager  requestWhenInUseAuthorization];
-            } else {
-                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
-            }
-        }
-    }
-    [locationManager startUpdatingLocation];
-    
     signOutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [signOutButton addTarget:self
                       action:@selector(handleSignOutButton:)
@@ -88,19 +70,6 @@ static AFHTTPRequestOperationManager *manager;
 
     [SVProgressHUD showWithStatus:@"Loading..."];
     
-//    activityIndicator =
-//    [[UIActivityIndicatorView alloc]
-//     initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-//    activityIndicator.frame =CGRectMake(self.view.frame.size.width/2-25,
-//                                        self.view.frame.size.height/2-50,50,50);
-//    
-//    activityIndicator.color = [UIColor grayColor];
-//    UILabel *textLabel=[[UILabel alloc] initWithFrame:CGRectMake(-20, activityIndicator.frame.size.height, activityIndicator.frame.size.width+40, 20)];
-//    textLabel.text=@"Loading ...";
-//    textLabel.textAlignment=NSTextAlignmentCenter;
-//    [activityIndicator.viewForBaselineLayout addSubview:textLabel];
-//    
-//    [activityIndicator startAnimating];
     isAccessTokenValid = NO;
     
     [self authenticate];
