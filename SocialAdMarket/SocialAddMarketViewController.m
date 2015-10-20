@@ -39,13 +39,7 @@
     offerLogic = [[OfferLogic alloc]init];
     [SVProgressHUD showWithStatus:@"Loading..."];
     offerLogic.delegate = self;
-    [offerLogic setUserOffers:0];
     userAssets =[SAMUserPropertiesAndAssets sharedInstance];
-   
-    //self.offers = [user getOfferList];
-    
-    NSLog(@"Offerlist = %@", self.offers);
-    
     
     DELEGATE.segmentedView = [[BSCustomSegmentedView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x +20, 220, self.view.frame.size.width-40, 40)];
     DELEGATE.segmentedView.backgroundColor = [UIColor lightGrayColor];
@@ -58,6 +52,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden=YES;
     DELEGATE.segmentedView.hidden=NO;
+    DELEGATE.paginIndex=0;
+    [offerLogic setUserOffers:DELEGATE.paginIndex];
+    [self.saTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -205,8 +202,8 @@
         
         if(offset.y > 0 && y>(h+reload_distance)){
            
-            DELEGATE.paginIndex=DELEGATE.paginIndex+1;
-            if(DELEGATE.paginIndex<=DELEGATE.totalPage){
+            DELEGATE.paginIndex = DELEGATE.paginIndex+1;
+            if(DELEGATE.paginIndex <= DELEGATE.totalPage){
             
             [SVProgressHUD showWithStatus:@"Loading..."];
 

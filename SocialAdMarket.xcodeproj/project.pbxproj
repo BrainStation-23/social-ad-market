@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5C08661BD66C460022EE22 /* Images-2.xcassets */; };
 		6C028D211BD4FC0A00CA393C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D201BD4FC0A00CA393C /* main.m */; };
 		6C028D241BD4FC0A00CA393C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D231BD4FC0A00CA393C /* AppDelegate.m */; };
 		6C028D2C1BD4FC0A00CA393C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C028D2B1BD4FC0A00CA393C /* Images.xcassets */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A5C08661BD66C460022EE22 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		61D32AFBED45A8EF6AEAD48B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6C028D1B1BD4FC0A00CA393C /* SocialAdMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAdMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C028D1F1BD4FC0A00CA393C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				6C028D4E1BD4FC9800CA393C /* Controller */,
 				6C028D2B1BD4FC0A00CA393C /* Images.xcassets */,
 				6C028D2D1BD4FC0A00CA393C /* LaunchScreen.xib */,
+				4A5C08661BD66C460022EE22 /* Images-2.xcassets */,
 				6C028D1E1BD4FC0A00CA393C /* Supporting Files */,
 			);
 			path = SocialAdMarket;
@@ -584,6 +587,7 @@
 				6C028D2F1BD4FC0A00CA393C /* LaunchScreen.xib in Resources */,
 				6C028D701BD4FD0A00CA393C /* no-new-messages-icon.jpg in Resources */,
 				6C028D9C1BD4FDB700CA393C /* Main.storyboard in Resources */,
+				4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */,
 				6C028D2C1BD4FC0A00CA393C /* Images.xcassets in Resources */,
 				6C028D6F1BD4FD0A00CA393C /* images.jpeg in Resources */,
 				6C028D6C1BD4FD0A00CA393C /* light_profile_img.png in Resources */,
@@ -815,11 +819,14 @@
 			baseConfigurationReference = 61D32AFBED45A8EF6AEAD48B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
 				INFOPLIST_FILE = SocialAdMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869861cb-d540-4f60-b6cb-21e9c02a1499";
+				PROVISIONING_PROFILE = "e2017743-45a4-4220-bc44-83f5420ccfe5";
 			};
 			name = Debug;
 		};
@@ -828,6 +835,9 @@
 			baseConfigurationReference = 905FA446796BE9AA7D9E202B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
 				INFOPLIST_FILE = SocialAdMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

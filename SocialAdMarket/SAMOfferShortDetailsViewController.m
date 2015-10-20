@@ -159,12 +159,20 @@ static AFHTTPRequestOperationManager *manager;
 #pragma mark-
 #pragma mark- Utility method
 
--(BOOL)canSwap{
+-(BOOL)hasEnoughFollowers{
+   return isSwapable;
+}
+-(BOOL)withinTheDistance{
     CLLocation *location1 = [[CLLocation alloc] initWithLatitude:offerLatAndLong.latitude longitude:offerLatAndLong.longitude];
-    
-    
     CLLocationDistance distance = [userLocation distanceFromLocation:location1]/1000;
-     if(distance <=100 && isSwapable){
+    
+    if(distance <=1000){
+        return YES;
+    }
+    return NO;
+}
+-(BOOL)canSwap{
+     if([self hasEnoughFollowers]){
          return YES;
      }
     return NO;
@@ -188,8 +196,6 @@ static AFHTTPRequestOperationManager *manager;
         NSDictionary *parameters = @{@"BsInstagramUserId":[userWithOffers getUserID] ,@"OfferId": offerId};
         
         
-        
-        
         NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@",BASE_URL,OFFERSWAP];
         
         [manager POST: offerTodayAndFutureUrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -210,13 +216,34 @@ static AFHTTPRequestOperationManager *manager;
                   NSLog(@"Request failure. %@",error);
               }];
     }
+    else if (![self hasEnoughFollowers]){
+        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"
+                                                             message:@"You Don't have enough followers"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles:nil];
+        alertMessage.tag=1;
+        
+        [alertMessage show];
+    }
+//    else if(![self withinTheDistance]){
+//        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"
+//                                                             message:@"You are Not Within Required Distance"
+//                                                            delegate:self
+//                                                   cancelButtonTitle:@"Ok"
+//                                                   otherButtonTitles:nil];
+//        alertMessage.tag=2;
+//        
+//        [alertMessage show];
+//    }
+
     else{
-        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Sorry!"
-                                                             message:@"You Need More Followers"
+        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"
+                                                             message:@"You Can't swap. Unkown Error Occured"
                                                             delegate:self
                                                             cancelButtonTitle:@"Ok"
                                                             otherButtonTitles:nil];
-        alertMessage.tag=1;
+        alertMessage.tag=3;
         
         [alertMessage show];
     }
@@ -228,7 +255,7 @@ static AFHTTPRequestOperationManager *manager;
 #pragma mark- Alert View delegate
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    if(alertView.tag==1){
+    if(alertView.tag!=0){
           [self gestureHandlerMethod:tapRecognizer];
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BSLoginViewController.h
 //  SocialAdMarket
 //
 //  Created by BS23 on 9/21/15.
