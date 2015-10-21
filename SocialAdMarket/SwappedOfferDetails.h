@@ -21,6 +21,7 @@
 @property (nonatomic, assign) NSInteger RequiredMinimumInstagramFollowers;
 @property (nonatomic, assign) BOOL SwapbaleByFollowerRules;
 @property (nonatomic, retain) NSString *Title;
+@property (nonatomic, retain) NSString *SubTitle;
 
 
 -(SwappedOfferDetails*)initWithDictionary:(NSDictionary*)dictionary;

@@ -153,14 +153,17 @@ static AFHTTPRequestOperationManager *manager;
         
         
         NSString *username=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"username"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
         NSString *full_name=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"full_name"];
         
         NSMutableDictionary *currentUserInfo = [[NSMutableDictionary alloc]init];
         [currentUserInfo setObject:username forKey:@"userName"];
         [currentUserInfo setObject:full_name forKey:@"fullName"];
         [currentUserInfo setObject:followers forKey:@"followers"];
-        
-        [userWithOffers setUerInformation:currentUserInfo];
         
         NSDictionary *parameters = @{@"BsInstagramUserId": userId,@"Username": username,@"Name": full_name,@"Authenticate_Token": [result objectForKey:@"access_token"],@"TotalFollowers": followers};
         NSString *registrationUrl=[NSString stringWithFormat:@"%@%@",BASE_URL,REGISTRATION_URL];

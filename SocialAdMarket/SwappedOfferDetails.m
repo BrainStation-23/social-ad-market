@@ -32,6 +32,7 @@
         self.RequiredMinimumInstagramFollowers = [[dic valueForKey:@"RequiredMinimumInstagramFollowers"] integerValue];
         self.SwapbaleByFollowerRules = [[dic valueForKey:@"SwapbaleByFollowerRules"] boolValue];
         self.Title = [dic valueForKey:@"Title"];
+        self.SubTitle = [dic valueForKey:@"SubTitle"];
     }
     return self;
 }

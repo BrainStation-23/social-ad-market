@@ -28,7 +28,8 @@ static AFHTTPRequestOperationManager *manager;
     self.delegate=self;
    
     userAssets=[SAMUserPropertiesAndAssets sharedInstance];
-    self.userName.text= [[userAssets getUerInformation] objectForKey:@"userName"];
+    self.userName.text=  [[NSUserDefaults standardUserDefaults]
+                          stringForKey:@"UserName"];
     
     swapppedOffers = [[NSMutableArray alloc] init];
     [self setSwappedOffers];

@@ -15,7 +15,6 @@
 @interface SAMUserPropertiesAndAssets : NSObject{
   NSString *userId;
   CLLocation *currentLocation;
-  NSDictionary *userInformation;
   NSMutableArray *offerList;
   NSMutableDictionary *detailsOfferList;
 }
@@ -24,14 +23,12 @@
 //setter
 -(void)setUserID:(NSString*)currentUserId;
 -(void)setCurrentLocation:(CLLocation*)currentUserLocation;
--(void)setUerInformation:(NSDictionary*)currentUserInformation;
 -(void)setOfferList:(NSMutableArray*)offerListForUser;
 -(void)setDetailsOfferList:(NSMutableDictionary*)detailsOfferListForUser;
 
 //getter
 -(NSString*)getUserID;
 -(CLLocation*)getCurrentLocation;
--(NSDictionary*)getUerInformation;
 -(NSMutableArray*)getOfferList;
 -(NSMutableDictionary*)getDetailsOfferList;
 

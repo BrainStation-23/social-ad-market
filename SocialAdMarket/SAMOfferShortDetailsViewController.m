@@ -18,7 +18,8 @@ static AFHTTPRequestOperationManager *manager;
     CLLocationCoordinate2D offerLatAndLong;
     UITapGestureRecognizer *tapRecognizer;
     CLLocation *userLocation;
-    BOOL isSwapable;
+    BOOL hasFollowers;
+    BOOL isAlreadySwapped;
 }
 
 @end
@@ -72,14 +73,16 @@ static AFHTTPRequestOperationManager *manager;
                                                offerLatAndLong.latitude = [[offerDetails valueForKey:@"Latitude"] doubleValue];
                                                offerLatAndLong.longitude =  [[offerDetails valueForKey:@"Longitude"] doubleValue];
                                                
-                                               isSwapable = [offerDetails objectForKey:@"SwapbaleByFollowerRules"];
+                                               hasFollowers = [[offerDetails objectForKey:@"SwapbaleByFollowerRules"] boolValue];
+                                               isAlreadySwapped = [[offerDetails objectForKey:@"IsAlreadySwapped"] boolValue];
                                                
                                                self.shortDescriptionView.titleLabel.text = [offerDetails objectForKey:@"Title"];
+                                               self.shortDescriptionView.subTitleLabel.text = [offerDetails objectForKey:@"SubTitle"];
                                                self.shortDescriptionView.briefDescriptionLabel.text = [offerDetails objectForKey:@"Details"];
                                                self.shortDescriptionView.requiredFollowersLabel.text = [[NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"RequiredMinimumInstagramFollowers"]] stringByAppendingString:@" followers"] ;
                                                
                                                if([NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"Distance"]]!=nil || ![NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"Distance"]].length){
-                                                   self.shortDescriptionView.milesLabel.text = @" mi";
+                                                   self.shortDescriptionView.milesLabel.text = @" km";
                                                }
                                                else{
                                                    self.shortDescriptionView.milesLabel.text = [[NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"Distance"]] stringByAppendingString:@" mi"];
@@ -88,6 +91,10 @@ static AFHTTPRequestOperationManager *manager;
                                                if([self canSwap]){
                                                    [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor greenColor]];
                                                    [self.shortDescriptionView.swapButton setTitle:@"Swap" forState:UIControlStateNormal];
+                                               }
+                                               else if([self isAlreadySwapped]){
+                                                   [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor lightGrayColor]];
+                                                   [self.shortDescriptionView.swapButton setTitle:@"You Have Already Swapped" forState:UIControlStateNormal];
                                                }
                                                else{
                                                    [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor lightGrayColor]];
@@ -160,20 +167,28 @@ static AFHTTPRequestOperationManager *manager;
 #pragma mark- Utility method
 
 -(BOOL)hasEnoughFollowers{
-   return isSwapable;
+   return hasFollowers;
+}
+-(BOOL)isAlreadySwapped{
+    return isAlreadySwapped;
 }
 -(BOOL)withinTheDistance{
     CLLocation *location1 = [[CLLocation alloc] initWithLatitude:offerLatAndLong.latitude longitude:offerLatAndLong.longitude];
     CLLocationDistance distance = [userLocation distanceFromLocation:location1]/1000;
     
-    if(distance <=1000){
+    if(distance <=10000){
         return YES;
     }
     return NO;
 }
 -(BOOL)canSwap{
-     if([self hasEnoughFollowers]){
-         return YES;
+     if([self hasEnoughFollowers] && ![self isAlreadySwapped]){
+         if([self withinTheDistance]){
+             return YES;
+         }
+         else{
+             return NO;
+         }
      }
     return NO;
 }
@@ -226,24 +241,33 @@ static AFHTTPRequestOperationManager *manager;
         
         [alertMessage show];
     }
-//    else if(![self withinTheDistance]){
-//        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"
-//                                                             message:@"You are Not Within Required Distance"
-//                                                            delegate:self
-//                                                   cancelButtonTitle:@"Ok"
-//                                                   otherButtonTitles:nil];
-//        alertMessage.tag=2;
-//        
-//        [alertMessage show];
-//    }
-
+    else if(![self withinTheDistance]){
+        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"
+                                                             message:@"You are Not Within Required Distance"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles:nil];
+        alertMessage.tag=2;
+        
+        [alertMessage show];
+    }
+    else if([self isAlreadySwapped]){
+        UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Already Swapped!"
+                                                             message:@"You have Already Swapped This Offer"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Ok"
+                                                   otherButtonTitles:nil];
+        alertMessage.tag=3;
+        
+        [alertMessage show];
+    }
     else{
         UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"
                                                              message:@"You Can't swap. Unkown Error Occured"
                                                             delegate:self
                                                             cancelButtonTitle:@"Ok"
                                                             otherButtonTitles:nil];
-        alertMessage.tag=3;
+        alertMessage.tag=4;
         
         [alertMessage show];
     }

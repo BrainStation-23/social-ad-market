@@ -138,7 +138,7 @@
     BSOfferDetails *offer =[self.offers objectAtIndex:indexPath.row];
 
     cell.ppTitle.text= offer.Title;
-    cell.ppSubTitle.text=offer.Title;
+    cell.ppSubTitle.text=offer.SubTitle;
     cell.ppDistance.text = [[NSString stringWithFormat:@"%0.2f",[offer.Distance doubleValue]] stringByAppendingString:@" km"];
     cell.ppFollowers.text = [NSString stringWithFormat:@"%ld",(long)[offer.RequiredMinimumInstagramFollowers integerValue]];
     

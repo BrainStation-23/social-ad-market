@@ -27,9 +27,6 @@ static SAMUserPropertiesAndAssets *instance;
 -(void)setCurrentLocation:(CLLocation*)currentUserLocation{
     currentLocation=currentUserLocation;
 }
--(void)setUerInformation:(NSDictionary*)currentUserInformation{
-    userInformation=currentUserInformation;
-}
 -(void)setOfferList:(NSMutableArray*)offerListForUser{
     offerList=offerListForUser;
 }
@@ -45,10 +42,6 @@ static SAMUserPropertiesAndAssets *instance;
 -(CLLocation*)getCurrentLocation{
     return currentLocation;
 }
--(NSDictionary*)getUerInformation{
-    return userInformation;
-}
-
 - (NSMutableArray *) getOfferList{
     return offerList;
 }

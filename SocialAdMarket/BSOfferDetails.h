@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSString *IsAlreadySwapped;
 @property (nonatomic,strong) NSString *Latitude;
 @property (nonatomic,strong) NSString *Title;
+@property (nonatomic, retain) NSString *SubTitle;
 @property (nonatomic,strong) NSString *RequiredMinimumInstagramFollowers;
 @property (nonatomic,strong) NSString *Id;
 @property (nonatomic,strong) NSString *SwapbaleByFollowerRules;

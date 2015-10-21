@@ -126,9 +126,10 @@
 #pragma mark- utility method
 
 -(void)presentEmailView{
-    NSString *userName = [[userAssets getUerInformation] objectForKey:@"userName"];
+    NSString *userName =  [[NSUserDefaults standardUserDefaults]
+                           stringForKey:@"UserName"];
  
-    NSString *emailTitle =[ userName stringByAppendingString: @" has feedback"];
+    NSString *emailTitle = [userName stringByAppendingString: @" has feedback"];
     NSArray *reciepent = [NSArray arrayWithObject:@"help@popularpays.com"];
     
     mailComposer = [[MFMailComposeViewController alloc] init];

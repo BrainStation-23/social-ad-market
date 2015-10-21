@@ -46,29 +46,33 @@ static AFHTTPRequestOperationManager *manager;
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"accessToken"];
     
     
-    NSMutableDictionary *jsonDataDictionary=[[NSMutableDictionary alloc]init];
-    NSString *url=[NSString stringWithFormat:@"https://api.instagram.com/v1/users/self?access_token=%@", accessToken];
-    
-    NSURL *jsonURL = [NSURL URLWithString:url];
-    NSData *jsonData = [NSData dataWithContentsOfURL:jsonURL];
-    NSError *error = nil;
-    jsonDataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    
-    NSString *followers=[[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"counts"] objectForKey:@"followed_by"];
-    NSString *userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"UserID"];
-    [userWithOffers setUserID:userId];
-    
-    NSString *username=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"username"];
-    NSString *full_name=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"full_name"];
-    
-    NSMutableDictionary *currentUserInfo = [[NSMutableDictionary alloc]init];
-    [currentUserInfo setObject:username forKey:@"userName"];
-    [currentUserInfo setObject:full_name forKey:@"fullName"];
-    [currentUserInfo setObject:followers forKey:@"followers"];
-    
-    [userWithOffers setUerInformation:currentUserInfo];
+//    NSMutableDictionary *jsonDataDictionary=[[NSMutableDictionary alloc]init];
+//    NSString *url=[NSString stringWithFormat:@"https://api.instagram.com/v1/users/self?access_token=%@", accessToken];
+//    
+//    NSURL *jsonURL = [NSURL URLWithString:url];
+//    NSData *jsonData = [NSData dataWithContentsOfURL:jsonURL];
+//    NSError *error = nil;
+//    jsonDataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+//    
+//    NSString *followers=[[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"counts"] objectForKey:@"followed_by"];
+//    NSString *userId = [[NSUserDefaults standardUserDefaults] stringForKey:@"UserID"];
+//    [userWithOffers setUserID:userId];
+//    
+//    NSString *username=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"username"];
+//    NSString *full_name=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"full_name"];
+//    
+//    NSMutableDictionary *currentUserInfo = [[NSMutableDictionary alloc]init];
+//    [currentUserInfo setObject:username forKey:@"userName"];
+//    [currentUserInfo setObject:full_name forKey:@"fullName"];
+//    [currentUserInfo setObject:followers forKey:@"followers"];
+//    
+//    [userWithOffers setUerInformation:currentUserInfo];
     
     NSString *loginUrl=[NSString stringWithFormat:@"%@%@",BASE_URL,LOGIN_URL];
+    
+    NSString *userId = [[NSUserDefaults standardUserDefaults]
+                        stringForKey:@"UserID"];
+    
     [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userId] forHTTPHeaderField:@"UserId"];
     
     [manager GET: loginUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
