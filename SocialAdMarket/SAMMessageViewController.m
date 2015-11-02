@@ -57,9 +57,7 @@
         APIManager *manager = [APIManager sharedManager];
         manager.delegate=self;
         [manager getInboxItems:[userProperties getUserID]];
-        
-        
-        
+
     }
     else if (segmentBtn.selectedSegmentIndex==1){
     
@@ -207,8 +205,6 @@
 
      }
 
-    
-    
          MDVC.IBD = IBD;
         [self.navigationController pushViewController:MDVC animated:YES];
 }

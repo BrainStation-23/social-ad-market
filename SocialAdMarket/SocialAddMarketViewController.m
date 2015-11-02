@@ -31,8 +31,6 @@ static AFHTTPRequestOperationManager *manager;
     BSShortDescriptionView *offerDesciptionView;
     
     
-    
-    
     CLLocationCoordinate2D offerLatAndLong;
     UITapGestureRecognizer *tapRecognizer;
     CLLocation *userLocation;
@@ -433,13 +431,7 @@ static AFHTTPRequestOperationManager *manager;
 //    self.offer = [self.offers objectAtIndex:indexPath.row];
 //    
 //    [self getDataForDetailsView];
-    
 
-    
-    
-    
-    
-    
     
     
     //[self animateOnEntry];
@@ -453,18 +445,6 @@ static AFHTTPRequestOperationManager *manager;
     //[self presentViewController:detailViewController animated:YES completion:nil];
     [self.navigationController pushViewController:detailViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 

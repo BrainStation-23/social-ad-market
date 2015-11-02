@@ -91,7 +91,7 @@
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"didFailWithError: %@", error);
+    //NSLog(@"didFailWithError: %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -101,7 +101,7 @@
     
     [userWithOffers setCurrentLocation:newLocation];
     
-    NSLog(@"currentLocation===%@",currentLocation);
+   // NSLog(@"currentLocation===%@",currentLocation);
     
 }
 @end

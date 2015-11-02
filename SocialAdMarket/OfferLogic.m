@@ -94,6 +94,7 @@ static AFHTTPRequestOperationManager *manager;
                             offerList=[[NSMutableArray alloc] init];
                         }
                         
+                        
                         for(NSDictionary *dic in offerListDictionary){
                             
                             BSOfferDetails *offerWithDetails=[[BSOfferDetails alloc] initWithDictionary:dic];
@@ -114,10 +115,10 @@ static AFHTTPRequestOperationManager *manager;
                 NSLog(@"Request failure. %@",error);
             }];
 }
--(void)setUserWithUserID:(NSString*)userId andOfferList:(NSMutableArray*)offerList{
+-(void)setUserWithUserID:(NSString*)userId andOfferList:(NSMutableArray*)offerListData{
     SAMUserPropertiesAndAssets *userWithOffers=[SAMUserPropertiesAndAssets sharedInstance];
     [userWithOffers setUserID:userId];
-    [userWithOffers setOfferList:offerList];
+    [userWithOffers setOfferList:offerListData];
 }
 
 #pragma mark - CLLocationManagerDelegate
