@@ -27,6 +27,13 @@
 
 @property BOOL isLoggedIn;
 
+@property (weak, nonatomic) IBOutlet BSShortDescriptionView *shortDescriptionView;
+@property (readwrite, nonatomic) int yOrigin;
+@property (weak, nonatomic) IBOutlet UIImageView *enlargedImageView;
+@property (readwrite, nonatomic) BSOfferDetails *offer;
+
+
+
 @property(nonatomic, strong) IBOutlet UIImageView *saImageView;
 @property(nonatomic, strong) IBOutlet UITableView *saTableView;
 @end

@@ -19,7 +19,9 @@
 
 @property(nonatomic, strong) IBOutlet UILabel *userName;
 @property(nonatomic, strong) IBOutlet UITableView *swappedTable;
+@property (nonatomic,strong) IBOutlet UIImageView *profileImage;
 
 -(IBAction)ShowSettingsPage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *settingsBtn;
 
 @end

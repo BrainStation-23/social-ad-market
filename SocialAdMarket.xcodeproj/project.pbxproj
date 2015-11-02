@@ -35,9 +35,7 @@
 		6C028D761BD4FD0A00CA393C /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C028D6A1BD4FD0A00CA393C /* left-arrow.png */; };
 		6C028D7A1BD4FD3000CA393C /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D791BD4FD3000CA393C /* BSLoginViewController.m */; };
 		6C028D7E1BD4FD4000CA393C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D7D1BD4FD4000CA393C /* BaseViewController.m */; };
-		6C028D921BD4FD8A00CA393C /* SocialAddMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D811BD4FD8A00CA393C /* SocialAddMarketViewController.m */; };
 		6C028D931BD4FD8A00CA393C /* SAMProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */; };
-		6C028D941BD4FD8A00CA393C /* SAMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D851BD4FD8A00CA393C /* SAMMessageViewController.m */; };
 		6C028D951BD4FD8A00CA393C /* SAMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */; };
 		6C028D961BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D891BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m */; };
 		6C028D971BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D8B1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m */; };
@@ -70,6 +68,17 @@
 		6C028DE51BD4FED100CA393C /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028DD51BD4FED100CA393C /* UIView+WebCacheOperation.m */; };
 		6C028DE71BD511FB00CA393C /* followers_red.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C028DE61BD511FB00CA393C /* followers_red.jpg */; };
 		6C2D74191BD522ED00A5BC3F /* app_icon 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2D74181BD522ED00A5BC3F /* app_icon 3.png */; };
+		6C77F9381BE73D05002DF037 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F9371BE73D05002DF037 /* APIManager.m */; };
+		6C77F93B1BE73D17002DF037 /* InboxDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F93A1BE73D17002DF037 /* InboxDetails.m */; };
+		6C77F9421BE73E19002DF037 /* SAMessageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F93D1BE73E19002DF037 /* SAMessageDetailsViewController.m */; };
+		6C77F9431BE73E19002DF037 /* SAMessageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77F93E1BE73E19002DF037 /* SAMessageDetailsViewController.xib */; };
+		6C77F9441BE73E19002DF037 /* SAMessageReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F9401BE73E19002DF037 /* SAMessageReplyViewController.m */; };
+		6C77F9451BE73E19002DF037 /* SAMessageReplyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77F9411BE73E19002DF037 /* SAMessageReplyViewController.xib */; };
+		6C77F94B1BE73EEE002DF037 /* SocialAddMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F94A1BE73EEE002DF037 /* SocialAddMarketViewController.m */; };
+		6C77F94F1BE73F80002DF037 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F94E1BE73F80002DF037 /* UIScrollView+APParallaxHeader.m */; };
+		6C77F9511BE74236002DF037 /* InboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C77F9501BE74236002DF037 /* InboxTableViewCell.xib */; };
+		6C77F9541BE74275002DF037 /* SAMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F9531BE74275002DF037 /* SAMMessageViewController.m */; };
+		6C77F9571BE744B9002DF037 /* InboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C77F9561BE744B9002DF037 /* InboxTableViewCell.m */; };
 		E9366F2DFBC86301DC8CD96A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E282CDB4CA535E8622C0454 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -125,12 +134,8 @@
 		6C028D791BD4FD3000CA393C /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginViewController.m; sourceTree = "<group>"; };
 		6C028D7C1BD4FD4000CA393C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		6C028D7D1BD4FD4000CA393C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		6C028D801BD4FD8A00CA393C /* SocialAddMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAddMarketViewController.h; sourceTree = "<group>"; };
-		6C028D811BD4FD8A00CA393C /* SocialAddMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAddMarketViewController.m; sourceTree = "<group>"; };
 		6C028D821BD4FD8A00CA393C /* SAMProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMProfileViewController.h; sourceTree = "<group>"; };
 		6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMProfileViewController.m; sourceTree = "<group>"; };
-		6C028D841BD4FD8A00CA393C /* SAMMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMMessageViewController.h; sourceTree = "<group>"; };
-		6C028D851BD4FD8A00CA393C /* SAMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMMessageViewController.m; sourceTree = "<group>"; };
 		6C028D861BD4FD8A00CA393C /* SAMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMMapViewController.h; sourceTree = "<group>"; };
 		6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMMapViewController.m; sourceTree = "<group>"; };
 		6C028D881BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMOfferShortDetailsViewController.h; sourceTree = "<group>"; };
@@ -192,6 +197,25 @@
 		6C028DD51BD4FED100CA393C /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		6C028DE61BD511FB00CA393C /* followers_red.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = followers_red.jpg; sourceTree = "<group>"; };
 		6C2D74181BD522ED00A5BC3F /* app_icon 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon 3.png"; sourceTree = "<group>"; };
+		6C77F9361BE73D05002DF037 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		6C77F9371BE73D05002DF037 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		6C77F9391BE73D17002DF037 /* InboxDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxDetails.h; sourceTree = "<group>"; };
+		6C77F93A1BE73D17002DF037 /* InboxDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxDetails.m; sourceTree = "<group>"; };
+		6C77F93C1BE73E19002DF037 /* SAMessageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMessageDetailsViewController.h; sourceTree = "<group>"; };
+		6C77F93D1BE73E19002DF037 /* SAMessageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMessageDetailsViewController.m; sourceTree = "<group>"; };
+		6C77F93E1BE73E19002DF037 /* SAMessageDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAMessageDetailsViewController.xib; sourceTree = "<group>"; };
+		6C77F93F1BE73E19002DF037 /* SAMessageReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMessageReplyViewController.h; sourceTree = "<group>"; };
+		6C77F9401BE73E19002DF037 /* SAMessageReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMessageReplyViewController.m; sourceTree = "<group>"; };
+		6C77F9411BE73E19002DF037 /* SAMessageReplyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAMessageReplyViewController.xib; sourceTree = "<group>"; };
+		6C77F9491BE73EEE002DF037 /* SocialAddMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAddMarketViewController.h; sourceTree = "<group>"; };
+		6C77F94A1BE73EEE002DF037 /* SocialAddMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAddMarketViewController.m; sourceTree = "<group>"; };
+		6C77F94D1BE73F80002DF037 /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
+		6C77F94E1BE73F80002DF037 /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
+		6C77F9501BE74236002DF037 /* InboxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxTableViewCell.xib; sourceTree = "<group>"; };
+		6C77F9521BE74275002DF037 /* SAMMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMMessageViewController.h; sourceTree = "<group>"; };
+		6C77F9531BE74275002DF037 /* SAMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMMessageViewController.m; sourceTree = "<group>"; };
+		6C77F9551BE744B9002DF037 /* InboxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxTableViewCell.h; sourceTree = "<group>"; };
+		6C77F9561BE744B9002DF037 /* InboxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewCell.m; sourceTree = "<group>"; };
 		8E282CDB4CA535E8622C0454 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		905FA446796BE9AA7D9E202B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,8 +282,8 @@
 				6C028D511BD4FCB500CA393C /* Library */,
 				6C028D4C1BD4FC6600CA393C /* Resources */,
 				6C028D501BD4FCB000CA393C /* Model */,
-				6C028D4F1BD4FCAA00CA393C /* View */,
 				6C028D4E1BD4FC9800CA393C /* Controller */,
+				6C028D4F1BD4FCAA00CA393C /* View */,
 				6C028D2B1BD4FC0A00CA393C /* Images.xcassets */,
 				6C028D2D1BD4FC0A00CA393C /* LaunchScreen.xib */,
 				4A5C08661BD66C460022EE22 /* Images-2.xcassets */,
@@ -341,6 +365,9 @@
 				6C028DA11BD4FE4700CA393C /* Custom Views */,
 				6C028D9D1BD4FDEB00CA393C /* Custom Cells */,
 				6C028D9B1BD4FDB700CA393C /* Main.storyboard */,
+				6C77F9501BE74236002DF037 /* InboxTableViewCell.xib */,
+				6C77F93E1BE73E19002DF037 /* SAMessageDetailsViewController.xib */,
+				6C77F9411BE73E19002DF037 /* SAMessageReplyViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -357,6 +384,10 @@
 				6C028D581BD4FCF500CA393C /* OfferLogic.m */,
 				6C028D591BD4FCF500CA393C /* SwappedOfferDetails.h */,
 				6C028D5A1BD4FCF500CA393C /* SwappedOfferDetails.m */,
+				6C77F9361BE73D05002DF037 /* APIManager.h */,
+				6C77F9371BE73D05002DF037 /* APIManager.m */,
+				6C77F9391BE73D17002DF037 /* InboxDetails.h */,
+				6C77F93A1BE73D17002DF037 /* InboxDetails.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -364,6 +395,7 @@
 		6C028D511BD4FCB500CA393C /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				6C77F94C1BE73F80002DF037 /* APParallaxHeader */,
 				6C028DB41BD4FED100CA393C /* SDWebImage */,
 				6C028DAE1BD4FEA100CA393C /* SVProgressHUD */,
 			);
@@ -391,24 +423,16 @@
 		6C028D7F1BD4FD6900CA393C /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				6C028D801BD4FD8A00CA393C /* SocialAddMarketViewController.h */,
-				6C028D811BD4FD8A00CA393C /* SocialAddMarketViewController.m */,
-				6C028D821BD4FD8A00CA393C /* SAMProfileViewController.h */,
-				6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */,
-				6C028D841BD4FD8A00CA393C /* SAMMessageViewController.h */,
-				6C028D851BD4FD8A00CA393C /* SAMMessageViewController.m */,
-				6C028D861BD4FD8A00CA393C /* SAMMapViewController.h */,
-				6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */,
+				6C77F9491BE73EEE002DF037 /* SocialAddMarketViewController.h */,
+				6C77F94A1BE73EEE002DF037 /* SocialAddMarketViewController.m */,
 				6C028D881BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.h */,
 				6C028D891BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m */,
 				6C028D8A1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.h */,
 				6C028D8B1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m */,
-				6C028D8C1BD4FD8A00CA393C /* SAMSettingsViewController.h */,
-				6C028D8D1BD4FD8A00CA393C /* SAMSettingsViewController.m */,
-				6C028D8E1BD4FD8A00CA393C /* SAMChangeEmailViewController.h */,
-				6C028D8F1BD4FD8A00CA393C /* SAMChangeEmailViewController.m */,
-				6C028D901BD4FD8A00CA393C /* SuggestMerchantViewController.h */,
-				6C028D911BD4FD8A00CA393C /* SuggestMerchantViewController.m */,
+				6C77F9481BE73E90002DF037 /* Settings */,
+				6C77F9471BE73E7C002DF037 /* Profile */,
+				6C77F9461BE73E74002DF037 /* Map */,
+				6C77F9351BE73C44002DF037 /* Messages */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -417,6 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				6C028D9E1BD4FE4100CA393C /* SAMTableViewCell.h */,
+				6C77F9551BE744B9002DF037 /* InboxTableViewCell.h */,
+				6C77F9561BE744B9002DF037 /* InboxTableViewCell.m */,
 				6C028D9F1BD4FE4100CA393C /* SAMTableViewCell.m */,
 			);
 			name = "Custom Cells";
@@ -485,6 +511,59 @@
 				6C028DD51BD4FED100CA393C /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		6C77F9351BE73C44002DF037 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				6C77F9521BE74275002DF037 /* SAMMessageViewController.h */,
+				6C77F9531BE74275002DF037 /* SAMMessageViewController.m */,
+				6C77F93C1BE73E19002DF037 /* SAMessageDetailsViewController.h */,
+				6C77F93D1BE73E19002DF037 /* SAMessageDetailsViewController.m */,
+				6C77F93F1BE73E19002DF037 /* SAMessageReplyViewController.h */,
+				6C77F9401BE73E19002DF037 /* SAMessageReplyViewController.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		6C77F9461BE73E74002DF037 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				6C028D861BD4FD8A00CA393C /* SAMMapViewController.h */,
+				6C028D871BD4FD8A00CA393C /* SAMMapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		6C77F9471BE73E7C002DF037 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6C028D821BD4FD8A00CA393C /* SAMProfileViewController.h */,
+				6C028D831BD4FD8A00CA393C /* SAMProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		6C77F9481BE73E90002DF037 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6C028D8C1BD4FD8A00CA393C /* SAMSettingsViewController.h */,
+				6C028D8D1BD4FD8A00CA393C /* SAMSettingsViewController.m */,
+				6C028D8E1BD4FD8A00CA393C /* SAMChangeEmailViewController.h */,
+				6C028D8F1BD4FD8A00CA393C /* SAMChangeEmailViewController.m */,
+				6C028D901BD4FD8A00CA393C /* SuggestMerchantViewController.h */,
+				6C028D911BD4FD8A00CA393C /* SuggestMerchantViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		6C77F94C1BE73F80002DF037 /* APParallaxHeader */ = {
+			isa = PBXGroup;
+			children = (
+				6C77F94D1BE73F80002DF037 /* UIScrollView+APParallaxHeader.h */,
+				6C77F94E1BE73F80002DF037 /* UIScrollView+APParallaxHeader.m */,
+			);
+			path = APParallaxHeader;
 			sourceTree = "<group>";
 		};
 		D05FB7EA97962D33602D0A6E /* Frameworks */ = {
@@ -594,7 +673,10 @@
 				6C028D6E1BD4FD0A00CA393C /* img2.jpeg in Resources */,
 				6C028DB21BD4FEA100CA393C /* SVProgressHUD.bundle in Resources */,
 				6C028D721BD4FD0A00CA393C /* list.png in Resources */,
+				6C77F9511BE74236002DF037 /* InboxTableViewCell.xib in Resources */,
 				6C028D711BD4FD0A00CA393C /* plusGreen.png in Resources */,
+				6C77F9451BE73E19002DF037 /* SAMessageReplyViewController.xib in Resources */,
+				6C77F9431BE73E19002DF037 /* SAMessageDetailsViewController.xib in Resources */,
 				6C028D731BD4FD0A00CA393C /* message.png in Resources */,
 				6C028D761BD4FD0A00CA393C /* left-arrow.png in Resources */,
 			);
@@ -666,6 +748,7 @@
 				6C028DE51BD4FED100CA393C /* UIView+WebCacheOperation.m in Sources */,
 				6C028D7A1BD4FD3000CA393C /* BSLoginViewController.m in Sources */,
 				6C028DDD1BD4FED100CA393C /* SDWebImageManager.m in Sources */,
+				6C77F9381BE73D05002DF037 /* APIManager.m in Sources */,
 				6C028D7E1BD4FD4000CA393C /* BaseViewController.m in Sources */,
 				6C028DAC1BD4FE5600CA393C /* BSCustomSegmentedView.m in Sources */,
 				6C028D5B1BD4FCF500CA393C /* SAMUserPropertiesAndAssets.m in Sources */,
@@ -674,26 +757,31 @@
 				6C028D241BD4FC0A00CA393C /* AppDelegate.m in Sources */,
 				6C028D961BD4FD8A00CA393C /* SAMOfferShortDetailsViewController.m in Sources */,
 				6C028DE41BD4FED100CA393C /* UIImageView+WebCache.m in Sources */,
-				6C028D921BD4FD8A00CA393C /* SocialAddMarketViewController.m in Sources */,
 				6C028D981BD4FD8A00CA393C /* SAMSettingsViewController.m in Sources */,
+				6C77F9571BE744B9002DF037 /* InboxTableViewCell.m in Sources */,
 				6C028D991BD4FD8A00CA393C /* SAMChangeEmailViewController.m in Sources */,
 				6C028DE31BD4FED100CA393C /* UIImageView+HighlightedWebCache.m in Sources */,
 				6C028DA01BD4FE4100CA393C /* SAMTableViewCell.m in Sources */,
 				6C028DB31BD4FEA100CA393C /* SVProgressHUD.m in Sources */,
-				6C028D941BD4FD8A00CA393C /* SAMMessageViewController.m in Sources */,
 				6C028DE01BD4FED100CA393C /* UIImage+GIF.m in Sources */,
+				6C77F94B1BE73EEE002DF037 /* SocialAddMarketViewController.m in Sources */,
 				6C028DE11BD4FED100CA393C /* UIImage+MultiFormat.m in Sources */,
 				6C028D931BD4FD8A00CA393C /* SAMProfileViewController.m in Sources */,
+				6C77F9441BE73E19002DF037 /* SAMessageReplyViewController.m in Sources */,
 				6C028DE21BD4FED100CA393C /* UIImage+WebP.m in Sources */,
 				6C028DDE1BD4FED100CA393C /* SDWebImagePrefetcher.m in Sources */,
 				6C028D5D1BD4FCF500CA393C /* OfferLogic.m in Sources */,
 				6C028DAD1BD4FE5600CA393C /* BSShortDescriptionView.m in Sources */,
 				6C028D9A1BD4FD8A00CA393C /* SuggestMerchantViewController.m in Sources */,
+				6C77F9421BE73E19002DF037 /* SAMessageDetailsViewController.m in Sources */,
 				6C028DAA1BD4FE5600CA393C /* DWBubbleMenuButton.m in Sources */,
+				6C77F9541BE74275002DF037 /* SAMMessageViewController.m in Sources */,
 				6C028DD61BD4FED100CA393C /* MKAnnotationView+WebCache.m in Sources */,
+				6C77F93B1BE73D17002DF037 /* InboxDetails.m in Sources */,
 				6C028D5E1BD4FCF500CA393C /* SwappedOfferDetails.m in Sources */,
 				6C028DDB1BD4FED100CA393C /* SDWebImageDownloader.m in Sources */,
 				6C028DDF1BD4FED100CA393C /* UIButton+WebCache.m in Sources */,
+				6C77F94F1BE73F80002DF037 /* UIScrollView+APParallaxHeader.m in Sources */,
 				6C028D211BD4FC0A00CA393C /* main.m in Sources */,
 				6C028DD71BD4FED100CA393C /* NSData+ImageContentType.m in Sources */,
 				6C028D951BD4FD8A00CA393C /* SAMMapViewController.m in Sources */,

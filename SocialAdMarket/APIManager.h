@@ -1,0 +1,41 @@
+//
+//  APIManager.h
+//  SocialAdMarket
+//
+//  Created by BS-125 on 10/30/15.
+//  Copyright (c) 2015 Brainstation-23. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "AFHTTPRequestOperationManager.h"
+
+@protocol APIManagerDelegate;
+
+@interface APIManager : NSObject{
+    
+    AFHTTPRequestOperationManager *manager;
+    
+}
+@property (strong, nonatomic) NSObject <APIManagerDelegate>* delegate;
++(APIManager*) sharedManager;
+
+
+-(void)getSentItems:(NSString *)currentUserId;
+-(void)getInboxItems:(NSString *)currentUserId;
+-(void)viewUserInboxMessage:(NSString *)currentUserId WithId:(NSString *)Id;
+-(void)deleteMessage:(NSString *)currentUserId WithId:(NSString *)Id;
+-(void)replyMessage:(NSString *)currentUserId WithParameters:(NSDictionary *)parameters;
+
+@end
+
+
+@protocol APIManagerDelegate
+@optional
+
+- (void) gotSentItems:(NSArray *) sentItems;
+- (void) gotInboxItems:(NSArray *) sentItems;
+- (void) successFullySentMessage;
+- (void) successFullyDeleteMessage;
+- (void) successFullyReadMessage;
+
+@end
