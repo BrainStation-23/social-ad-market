@@ -34,6 +34,10 @@
     NSString *userID = [[NSUserDefaults standardUserDefaults]
                         stringForKey:@"UserID"];
     
+    
+   // NSString *accessToken = [[NSUserDefaults standardUserDefaults]
+     //                   stringForKey:@"accessToken"];
+
     if(userID.length){
         SocialAddMarketViewController *homeViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
         self.customNav = [[UINavigationController alloc] initWithRootViewController:homeViewController];

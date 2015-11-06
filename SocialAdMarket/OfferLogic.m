@@ -44,7 +44,7 @@ static AFHTTPRequestOperationManager *manager;
     }
     [locationManager startUpdatingLocation];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"accessToken"];
-    
+    NSLog(@"accessToken===%@",accessToken);
     
 //    NSMutableDictionary *jsonDataDictionary=[[NSMutableDictionary alloc]init];
 //    NSString *url=[NSString stringWithFormat:@"https://api.instagram.com/v1/users/self?access_token=%@", accessToken];

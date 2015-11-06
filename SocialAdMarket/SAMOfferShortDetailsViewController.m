@@ -29,7 +29,7 @@ static AFHTTPRequestOperationManager *manager;
 - (void)viewDidLoad {
     [super viewDidLoad];
     DELEGATE.segmentedView.hidden=YES;
-    self.shortDescriptionView.hidden=YES;
+    //self.shortDescriptionView.hidden=YES;
  
     tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandlerMethod:)];
     [self.view addGestureRecognizer:tapRecognizer];
@@ -37,23 +37,86 @@ static AFHTTPRequestOperationManager *manager;
     
     SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
     userLocation = [userWithOffers getCurrentLocation];
-    manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer=[AFJSONResponseSerializer serializer];
-    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+//    manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer=[AFJSONResponseSerializer serializer];
+//    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+//    NSString *offerId = [NSString stringWithFormat:@"%@",self.offer.Id];
     
-    NSString *offerId = [NSString stringWithFormat:@"%@",self.offer.Id];
     
+    
+    
+   // offerLatAndLong.latitude = [self.offer.Latitude doubleValue];
+   // offerLatAndLong.longitude =[self.offer.Longitude doubleValue];
+    
+    NSLog(@"%@",self.offer);
+    
+    
+    hasFollowers = [[self.offer SwapbaleByFollowerRules] boolValue];
+    isAlreadySwapped =[[self.offer IsAlreadySwapped]boolValue];
+    
+    self.shortDescriptionView.titleLabel.text =self.offer.Title;
+    self.shortDescriptionView.subTitleLabel.text =self.offer.SubTitle;
+    self.shortDescriptionView.briefDescriptionLabel.text =self.offer.Details;
+    self.shortDescriptionView.requiredFollowersLabel.text = [[NSString stringWithFormat:@"%@",self.offer.RequiredMinimumInstagramFollowers] stringByAppendingString:@" followers"];
+    
+    if([NSString stringWithFormat:@"%@",self.offer.Distance]!=nil || ![NSString stringWithFormat:@"%@",self.offer.Distance].length){
+        self.shortDescriptionView.milesLabel.text = @" km";
+    }
+    else{
+        self.shortDescriptionView.milesLabel.text = [[NSString stringWithFormat:@"%@",self.offer.Distance] stringByAppendingString:@" mi"];
+        
+    }
+    if([self canSwap]){
+        [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor colorWithRed:45/255.0 green:166/255.0 blue:80/255.0 alpha:1]];
+        [self.shortDescriptionView.swapButton setTitle:@"Swap" forState:UIControlStateNormal];
+    }
+    else if([self isAlreadySwapped]){
+        [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.shortDescriptionView.swapButton setTitle:@"You Have Already Swapped" forState:UIControlStateNormal];
+    }
+    else{
+        [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.shortDescriptionView.swapButton setTitle:@"You Need More Followers" forState:UIControlStateNormal];
+        
+    }
+
+    
+    
+    if (self.offer.PictureUrl) {
+        __block UIActivityIndicatorView *activityIndicator;
+        __weak UIImageView *weakImageView = self.enlargedImageView;
+        [self.enlargedImageView sd_setImageWithURL:[NSURL URLWithString:self.offer.PictureUrl]
+                                  placeholderImage:[UIImage imageNamed:@"img2.jpg"]
+                                           options:SDWebImageProgressiveDownload
+                                          progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                              if (!activityIndicator) {
+                                                  [weakImageView addSubview:activityIndicator = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+                                              }
+                                          }
+                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         }];
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    /*
     [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",[userWithOffers getUserID]] forHTTPHeaderField:@"UserId"];
     NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?id=%@",BASE_URL,OFFERDETAILS_URL,offerId];
     
     [manager GET: offerTodayAndFutureUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+     
         NSDictionary *registrationInfo=(NSDictionary *) responseObject;
         NSDictionary *offerDetails = [responseObject objectForKey:@"ResponseResult"];
-      
-        
+     
+     
         if([[registrationInfo objectForKey:@"Success"] intValue]==1&&[[registrationInfo objectForKey:@"ErrorCode"] intValue]==0){
-            
+     
             if ([offerDetails objectForKey:@"PictureUrl"]) {
                 __block UIActivityIndicatorView *activityIndicator;
                 __weak UIImageView *weakImageView = self.enlargedImageView;
@@ -67,7 +130,7 @@ static AFHTTPRequestOperationManager *manager;
                                             }
                                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                                
-                                               [self animateOnEntry];
+                                               //[self animateOnEntry];
 
                                                
                                                offerLatAndLong.latitude = [[offerDetails valueForKey:@"Latitude"] doubleValue];
@@ -79,7 +142,7 @@ static AFHTTPRequestOperationManager *manager;
                                                self.shortDescriptionView.titleLabel.text = [offerDetails objectForKey:@"Title"];
                                                self.shortDescriptionView.subTitleLabel.text = [offerDetails objectForKey:@"SubTitle"];
                                                self.shortDescriptionView.briefDescriptionLabel.text = [offerDetails objectForKey:@"Details"];
-                                               self.shortDescriptionView.requiredFollowersLabel.text = [[NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"RequiredMinimumInstagramFollowers"]] stringByAppendingString:@" followers"] ;
+                                               self.shortDescriptionView.requiredFollowersLabel.text = [[NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"RequiredMinimumInstagramFollowers"]] stringByAppendingString:@" followers"];
                                                
                                                if([NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"Distance"]]!=nil || ![NSString stringWithFormat:@"%@",[offerDetails valueForKey:@"Distance"]].length){
                                                    self.shortDescriptionView.milesLabel.text = @" km";
@@ -89,7 +152,8 @@ static AFHTTPRequestOperationManager *manager;
                                                    
                                                }
                                                if([self canSwap]){
-                                                   [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor greenColor]];
+                                                   [self.shortDescriptionView.swapButton setBackgroundColor:[UIColor colorWithRed:45/255.0 green:166/255.0 blue:80/255.0 alpha:1]];
+                                                   //[self.shortDescriptionView.swapButton setBackgroundColor:[UIColor greenColor]];
                                                    [self.shortDescriptionView.swapButton setTitle:@"Swap" forState:UIControlStateNormal];
                                                }
                                                else if([self isAlreadySwapped]){
@@ -111,6 +175,8 @@ static AFHTTPRequestOperationManager *manager;
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Request failure. %@",error);
     }];
+     
+     */
 
 }
 
@@ -122,18 +188,20 @@ static AFHTTPRequestOperationManager *manager;
 #pragma mark- Gesture method
 
 
--(void)gestureHandlerMethod:(UITapGestureRecognizer*)sender {
+-(void)gestureHandlerMethod:(UITapGestureRecognizer*)sender{
     
     
-    [UIView animateWithDuration:0.8f animations:^{
-         self.enlargedImageView.frame = CGRectMake(self.enlargedImageView.frame.size.width,self.yOrigin, 0,0);
-         self.shortDescriptionView.frame = CGRectMake(-self.shortDescriptionView.frame.size.width, self.shortDescriptionView.frame.size.height, self.shortDescriptionView.frame.size.width, self.shortDescriptionView.frame.size.height);
-         self.shortDescriptionView.alpha = 0;
-    }
-    completion:^(BOOL finished){
-         [self.navigationController popViewControllerAnimated:NO];
-    }
-    ];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+//    [UIView animateWithDuration:0.8f animations:^{
+//         self.enlargedImageView.frame = CGRectMake(self.enlargedImageView.frame.size.width,self.yOrigin, 0,0);
+//         self.shortDescriptionView.frame = CGRectMake(-self.shortDescriptionView.frame.size.width, self.shortDescriptionView.frame.size.height, self.shortDescriptionView.frame.size.width, self.shortDescriptionView.frame.size.height);
+//         self.shortDescriptionView.alpha = 0;
+//    }
+//    completion:^(BOOL finished){
+//         [self.navigationController popViewControllerAnimated:NO];
+//    }
+//    ];
     
 }
 
@@ -198,19 +266,16 @@ static AFHTTPRequestOperationManager *manager;
 
 
 - (IBAction)swapBtnAct:(id)sender {
+    
     if([self canSwap]){
+        
         SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
         [userWithOffers getUserID];
         manager = [AFHTTPRequestOperationManager manager];
         manager.responseSerializer=[AFJSONResponseSerializer serializer];
         manager.requestSerializer=[AFJSONRequestSerializer serializer];
-        
         NSString *offerId = [NSString stringWithFormat:@"%@",self.offer.Id];
-        
-        
         NSDictionary *parameters = @{@"BsInstagramUserId":[userWithOffers getUserID] ,@"OfferId": offerId};
-        
-        
         NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@",BASE_URL,OFFERSWAP];
         
         [manager POST: offerTodayAndFutureUrl parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {

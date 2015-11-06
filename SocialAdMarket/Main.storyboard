@@ -254,9 +254,10 @@
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="50" id="DPY-sf-mxB">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DPY-sf-mxB" id="sSc-g9-NLi">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -647,9 +648,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="swappedOfferCell" rowHeight="71" id="3j0-sQ-3KX" customClass="SAMTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3j0-sQ-3KX" id="T0u-BQ-PCo">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP8-F4-j9c" userLabel="TitleLabel">
@@ -780,9 +782,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="offerCell" rowHeight="71" id="4Tj-kb-wCK" customClass="SAMTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Tj-kb-wCK" id="mgb-Q7-Iad">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLK-bk-2yJ" userLabel="TitleLabel">
