@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		476DCE9F1BFB06680074488A /* InstagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 476DCE9E1BFB06680074488A /* InstagramAPI.m */; };
 		477799761BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477799751BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m */; };
+		47E66D871C071D5300D475C6 /* GigsOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E66D861C071D5300D475C6 /* GigsOfferList.m */; };
 		4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5C08661BD66C460022EE22 /* Images-2.xcassets */; };
 		6C028D211BD4FC0A00CA393C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D201BD4FC0A00CA393C /* main.m */; };
 		6C028D241BD4FC0A00CA393C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D231BD4FC0A00CA393C /* AppDelegate.m */; };
@@ -93,7 +95,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		476DCE9D1BFB06680074488A /* InstagramAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramAPI.h; sourceTree = "<group>"; };
+		476DCE9E1BFB06680074488A /* InstagramAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramAPI.m; sourceTree = "<group>"; };
 		477799751BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMOfferShortDetailsViewController.m; sourceTree = "<group>"; };
+		47E66D851C071D5300D475C6 /* GigsOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GigsOfferList.h; sourceTree = "<group>"; };
+		47E66D861C071D5300D475C6 /* GigsOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GigsOfferList.m; sourceTree = "<group>"; };
 		4A5C08661BD66C460022EE22 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		61D32AFBED45A8EF6AEAD48B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6C028D1B1BD4FC0A00CA393C /* SocialAdMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAdMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +394,10 @@
 				6C77F9371BE73D05002DF037 /* APIManager.m */,
 				6C77F9391BE73D17002DF037 /* InboxDetails.h */,
 				6C77F93A1BE73D17002DF037 /* InboxDetails.m */,
+				476DCE9D1BFB06680074488A /* InstagramAPI.h */,
+				476DCE9E1BFB06680074488A /* InstagramAPI.m */,
+				47E66D851C071D5300D475C6 /* GigsOfferList.h */,
+				47E66D861C071D5300D475C6 /* GigsOfferList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -626,6 +636,7 @@
 				TargetAttributes = {
 					6C028D1A1BD4FC0A00CA393C = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = MG2L3YQ533;
 					};
 					6C028D331BD4FC0A00CA393C = {
 						CreatedOnToolsVersion = 6.4;
@@ -781,12 +792,14 @@
 				6C028D5E1BD4FCF500CA393C /* SwappedOfferDetails.m in Sources */,
 				6C028DDB1BD4FED100CA393C /* SDWebImageDownloader.m in Sources */,
 				6C028DDF1BD4FED100CA393C /* UIButton+WebCache.m in Sources */,
+				476DCE9F1BFB06680074488A /* InstagramAPI.m in Sources */,
 				6C77F94F1BE73F80002DF037 /* UIScrollView+APParallaxHeader.m in Sources */,
 				6C028D211BD4FC0A00CA393C /* main.m in Sources */,
 				6C028DD71BD4FED100CA393C /* NSData+ImageContentType.m in Sources */,
 				6C028D951BD4FD8A00CA393C /* SAMMapViewController.m in Sources */,
 				6C028D971BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m in Sources */,
 				6C028DD81BD4FED100CA393C /* SDImageCache.m in Sources */,
+				47E66D871C071D5300D475C6 /* GigsOfferList.m in Sources */,
 				6C028DAB1BD4FE5600CA393C /* BSAuthenticationUIWebView.m in Sources */,
 				6C028D5C1BD4FCF500CA393C /* BSOfferDetails.m in Sources */,
 			);
@@ -908,13 +921,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Raisul Kabir (M6ZE95VW75)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SocialAdMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e2017743-45a4-4220-bc44-83f5420ccfe5";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -924,13 +937,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SocialAdMarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869861cb-d540-4f60-b6cb-21e9c02a1499";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

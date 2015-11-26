@@ -23,7 +23,8 @@
 
 @interface SocialAddMarketViewController : BaseViewController<BaseViewControllerDelegate, BSCustomSegmentedViewDelegate, UITableViewDataSource, UITableViewDelegate,OfferLogicDelegate>
 
-@property(nonatomic, strong) NSMutableArray *offers;
+@property(nonatomic, strong) NSMutableArray *localOffers;
+@property(nonatomic, strong) NSMutableArray *gigsOffers;
 
 @property BOOL isLoggedIn;
 

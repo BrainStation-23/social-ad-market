@@ -84,11 +84,11 @@ shouldStartLoadWithRequest: (NSURLRequest *)request
     [authenticationDelegate hideActivityIndicator];
     
     if (error.code == 102) {
-        
+    
         [self loadRequest:[NSURLRequest
                            requestWithURL:[NSURL URLWithString:@"about:blank"]]];
         [self authenticationComplete];
-        
+    
     } else {
         NSLog(@"Unexpected error.code = %ld",(long)error.code);
     }

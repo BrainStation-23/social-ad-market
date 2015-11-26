@@ -19,12 +19,14 @@
 @property (strong, nonatomic) NSObject <APIManagerDelegate>* delegate;
 +(APIManager*) sharedManager;
 
-
+@property (nonatomic, retain) NSMutableArray *gigsOfferList;
 -(void)getSentItems:(NSString *)currentUserId;
 -(void)getInboxItems:(NSString *)currentUserId;
 -(void)viewUserInboxMessage:(NSString *)currentUserId WithId:(NSString *)Id;
 -(void)deleteMessage:(NSString *)currentUserId WithId:(NSString *)Id;
 -(void)replyMessage:(NSString *)currentUserId WithParameters:(NSDictionary *)parameters;
+- (void)loadMedia;
+-(void)getGigsOffers:(NSString *)currentUserId WithPageIndex:(NSInteger )pageIndex;
 
 @end
 
@@ -37,5 +39,5 @@
 - (void) successFullySentMessage;
 - (void) successFullyDeleteMessage;
 - (void) successFullyReadMessage;
-
+- (void) gotGigsOffers:(NSMutableArray *)gigsOfferArray;
 @end

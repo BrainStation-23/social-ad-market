@@ -10,7 +10,7 @@
 #import "BSShortDescriptionView.h"
 #import "BSOfferDetails.h"
 #import "AppDelegate.h"
-
+#import "GigsOfferList.h"
 #define MAIN_LABEL_Y_ORIGIN 0
 #define IMAGEVIEW_Y_ORIGIN 15
 
@@ -23,8 +23,7 @@
 
 
 @property (readwrite, nonatomic) BSOfferDetails *offer;
-
-
-
+@property (nonatomic, retain) GigsOfferList *gigsOfferList;
+@property (nonatomic , assign) BOOL flagForGigs;
 
 @end

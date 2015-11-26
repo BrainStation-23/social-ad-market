@@ -29,22 +29,24 @@ static AFHTTPRequestOperationManager *manager;
     locationManager.delegate=self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
-        NSUInteger code = [CLLocationManager authorizationStatus];
-        if (code == kCLAuthorizationStatusNotDetermined && ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
-            // choose one request according to your business.
-            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]){
-                [locationManager requestAlwaysAuthorization];
-            } else if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
-                [locationManager  requestWhenInUseAuthorization];
-            } else {
-                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
-            }
-        }
-    }
-    [locationManager startUpdatingLocation];
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"accessToken"];
-    NSLog(@"accessToken===%@",accessToken);
+//    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
+//        NSUInteger code = [CLLocationManager authorizationStatus];
+//        if (code == kCLAuthorizationStatusNotDetermined && ([locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
+//            // choose one request according to your business.
+//            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"]){
+//                [locationManager requestAlwaysAuthorization];
+//            } else if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+//                [locationManager  requestWhenInUseAuthorization];
+//            } else {
+//                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
+//            }
+//        }
+//    }
+//    [locationManager startUpdatingLocation];
+    
+    
+//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"accessToken"];
+//    NSLog(@"accessToken===%@",accessToken);
     
 //    NSMutableDictionary *jsonDataDictionary=[[NSMutableDictionary alloc]init];
 //    NSString *url=[NSString stringWithFormat:@"https://api.instagram.com/v1/users/self?access_token=%@", accessToken];
@@ -76,21 +78,28 @@ static AFHTTPRequestOperationManager *manager;
     [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userId] forHTTPHeaderField:@"UserId"];
     
     [manager GET: loginUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSDictionary *loginInfo=(NSDictionary *) responseObject;
+        
+        NSDictionary *loginInfo=(NSDictionary *) responseObject;
                 
                 if([[loginInfo objectForKey:@"Success"] intValue]==1&&[[loginInfo objectForKey:@"ErrorCode"] intValue]==0){
                     
                     [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userId] forHTTPHeaderField:@"UserId"];
                     NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,OFFERLIST_URL,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,(long)pageIndex];
                   
-                    [userWithOffers setCurrentLocation:currentLocation];
+                    
+                   // NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,LOCALOFFERLIST_URL,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,(long)pageIndex];
+
+                   // NSString *offerTodayAndFutureUrl=[NSString stringWithFormat:@"%@Offer/GetGigsOffersTodayAndFuture?lat=23&lon=90&pageIndex=0",BASE_URL];
+
+                    
+                    [userWithOffers setCurrentLocation:DELEGATE.currentLocation];
                     
                     [manager GET: offerTodayAndFutureUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                         
                         NSMutableDictionary *offerListDictionary=[[(NSMutableDictionary *)responseObject objectForKey:@"ResponseResult"] objectForKey:@"OfferList"];
                         
                         if(pageIndex==0){
-                            DELEGATE.totalPage = [[[responseObject objectForKey:@"ResponseResult"]objectForKey:@"TotalPage"] integerValue];
+                            DELEGATE.totalPageForLocal = [[[responseObject objectForKey:@"ResponseResult"]objectForKey:@"TotalPage"] integerValue];
                             offerList=[[NSMutableArray alloc] init];
                         }
                         

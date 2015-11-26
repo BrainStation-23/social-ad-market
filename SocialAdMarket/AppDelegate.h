@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSCustomSegmentedView.h"
+#import <CoreLocation/CoreLocation.h>
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
@@ -18,8 +19,13 @@
 @property (nonatomic, retain) UINavigationController *customNav;
 @property (nonatomic, retain) BSCustomSegmentedView *segmentedView;
 
-@property(nonatomic, assign) NSInteger paginIndex;
-@property(nonatomic, assign) NSInteger totalPage;
+@property(nonatomic, assign) NSInteger paginIndexForLocal;
+@property(nonatomic, assign) NSInteger paginIndexForGigs;
+
+@property(nonatomic, assign) NSInteger totalPageForLocal;
+@property(nonatomic, assign) NSInteger totalPageForGigs;
+
+@property (nonatomic, retain) CLLocation *currentLocation;
 
 
 @end

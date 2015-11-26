@@ -15,7 +15,9 @@
 #define LOGIN_URL @"/api/User/LogIn"
 #define OFFERLIST_URL @"/api/Offer/GetOffersTodayAndFuture"
 #define OFFERDETAILS_URL @"/api/Offer/GetOfferDetails"
+#define LOCALOFFERLIST_URL @"/api/Offer/GetGigsOffersTodayAndFuture"
 
 #define OFFERSWAP @"/api/User/OfferSwap"
 #define USERDETAILS @"/api/User/UserDetail"
 #endif
+//http://104.215.139.165:2323//api/Offer/GetGigsOffersTodayAndFuture?lat=23&lon=90&pageIndex=0

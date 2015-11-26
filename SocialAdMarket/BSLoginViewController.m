@@ -68,7 +68,7 @@ static AFHTTPRequestOperationManager *manager;
     [accessTokenTimeRemainingLabel
      setText: @"Access Token Time Remaining: expired"];
 
-    [SVProgressHUD showWithStatus:@"Loading..."];
+    //[SVProgressHUD showWithStatus:@"Loading..."];
     
     isAccessTokenValid = NO;
     
@@ -153,13 +153,10 @@ static AFHTTPRequestOperationManager *manager;
         
         
         NSString *username=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"username"];
-        
         [[NSUserDefaults standardUserDefaults] synchronize];
         [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"UserName"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-
         NSString *full_name=[[jsonDataDictionary objectForKey:@"data"] objectForKey:@"full_name"];
-        
         NSMutableDictionary *currentUserInfo = [[NSMutableDictionary alloc]init];
         [currentUserInfo setObject:username forKey:@"userName"];
         [currentUserInfo setObject:full_name forKey:@"fullName"];
@@ -178,7 +175,6 @@ static AFHTTPRequestOperationManager *manager;
                 
                 [manager GET: loginUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     NSDictionary *loginInfo=(NSDictionary *) responseObject;
-                    
                     if([[loginInfo objectForKey:@"Success"] intValue]==1&&[[loginInfo objectForKey:@"ErrorCode"] intValue]==0){
                       
                         [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userId] forHTTPHeaderField:@"UserId"];

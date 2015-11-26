@@ -15,13 +15,12 @@
 @interface AppDelegate ()<CLLocationManagerDelegate>{
     SAMUserPropertiesAndAssets *userWithOffers;
     CLLocationManager *locationManager;
-    CLLocation *currentLocation;
 }
 
 @end
 
 @implementation AppDelegate
-
+@synthesize currentLocation;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

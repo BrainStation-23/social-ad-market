@@ -34,14 +34,15 @@
 - (UILabel *)createExpandableButtonView {
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0.f, 40.f, 40.f)];
-    label.text = @"Tap";
+    label.text = @"+";
     label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.layer.cornerRadius = label.frame.size.height / 2.f;
-    label.backgroundColor =[UIColor blackColor];
+    label.backgroundColor =[UIColor colorWithRed:45/255.0 green:166/255.0 blue:80/255.0 alpha:1];
     label.clipsToBounds = YES;
     
     return label;
+
 }
 
 
@@ -68,13 +69,13 @@
     for (UIButton *button in buttonsMutable) {
         button.frame = CGRectMake(0.f, 0.f, 36.f, 36.f);
         button.layer.cornerRadius = button.frame.size.height / 2.f;
-        button.backgroundColor = [UIColor clearColor];
+        button.backgroundColor = [UIColor colorWithRed:45/255.0 green:166/255.0 blue:80/255.0 alpha:1];
+        //[UIColor clearColor];
         button.clipsToBounds = YES;
         button.tag = i++;
         
         [button addTarget:self action:@selector(loadView:) forControlEvents:UIControlEventTouchUpInside];
     }
-    
     return [buttonsMutable copy];
 }
 
