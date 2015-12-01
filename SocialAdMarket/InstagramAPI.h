@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString *profile_picture;
 @property (nonatomic, retain) NSString *username;
 @property (nonatomic, retain) NSString *images;
+@property (nonatomic, retain) NSString *imageID;
 
 @end
 

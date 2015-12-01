@@ -7,8 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47014D3A1C082E7B00F90DF9 /* InstagramMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47014D381C082E7B00F90DF9 /* InstagramMediaViewController.m */; };
+		47014D3B1C082E7B00F90DF9 /* InstagramMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47014D391C082E7B00F90DF9 /* InstagramMediaViewController.xib */; };
+		47014D3F1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47014D3D1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m */; };
+		47014D401C084A2900F90DF9 /* InstagramMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47014D3E1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.xib */; };
+		47014D421C084FED00F90DF9 /* overlay_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 47014D411C084FED00F90DF9 /* overlay_black.png */; };
 		476DCE9F1BFB06680074488A /* InstagramAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 476DCE9E1BFB06680074488A /* InstagramAPI.m */; };
 		477799761BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477799751BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m */; };
+		4793DE2D1C0C1E5F00BC11F5 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE191C0C1E5F00BC11F5 /* a.png */; };
+		4793DE2E1C0C1E5F00BC11F5 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE1A1C0C1E5F00BC11F5 /* b.png */; };
+		4793DE2F1C0C1E5F00BC11F5 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE1B1C0C1E5F00BC11F5 /* c.png */; };
+		4793DE301C0C1E5F00BC11F5 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE1C1C0C1E5F00BC11F5 /* close@2x.png */; };
+		4793DE311C0C1E5F00BC11F5 /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE1D1C0C1E5F00BC11F5 /* d.png */; };
+		4793DE321C0C1E5F00BC11F5 /* e.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE1E1C0C1E5F00BC11F5 /* e.png */; };
+		4793DE331C0C1E5F00BC11F5 /* f.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE1F1C0C1E5F00BC11F5 /* f.png */; };
+		4793DE341C0C1E5F00BC11F5 /* g.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE201C0C1E5F00BC11F5 /* g.png */; };
+		4793DE351C0C1E5F00BC11F5 /* h.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE211C0C1E5F00BC11F5 /* h.png */; };
+		4793DE361C0C1E5F00BC11F5 /* j.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE221C0C1E5F00BC11F5 /* j.png */; };
+		4793DE371C0C1E5F00BC11F5 /* k.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE231C0C1E5F00BC11F5 /* k.png */; };
+		4793DE381C0C1E5F00BC11F5 /* l.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE241C0C1E5F00BC11F5 /* l.png */; };
+		4793DE391C0C1E5F00BC11F5 /* m.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE251C0C1E5F00BC11F5 /* m.png */; };
+		4793DE3A1C0C1E5F00BC11F5 /* n.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE261C0C1E5F00BC11F5 /* n.png */; };
+		4793DE3B1C0C1E5F00BC11F5 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE271C0C1E5F00BC11F5 /* o.png */; };
+		4793DE3C1C0C1E5F00BC11F5 /* p.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE281C0C1E5F00BC11F5 /* p.png */; };
+		4793DE3D1C0C1E5F00BC11F5 /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE291C0C1E5F00BC11F5 /* photo-frame.png */; };
+		4793DE3E1C0C1E5F00BC11F5 /* q.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE2A1C0C1E5F00BC11F5 /* q.png */; };
+		4793DE3F1C0C1E5F00BC11F5 /* r.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE2B1C0C1E5F00BC11F5 /* r.png */; };
+		4793DE401C0C1E5F00BC11F5 /* s.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE2C1C0C1E5F00BC11F5 /* s.png */; };
 		47E66D871C071D5300D475C6 /* GigsOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E66D861C071D5300D475C6 /* GigsOfferList.m */; };
 		4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5C08661BD66C460022EE22 /* Images-2.xcassets */; };
 		6C028D211BD4FC0A00CA393C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D201BD4FC0A00CA393C /* main.m */; };
@@ -95,9 +120,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47014D371C082E7B00F90DF9 /* InstagramMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramMediaViewController.h; sourceTree = "<group>"; };
+		47014D381C082E7B00F90DF9 /* InstagramMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMediaViewController.m; sourceTree = "<group>"; };
+		47014D391C082E7B00F90DF9 /* InstagramMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramMediaViewController.xib; sourceTree = "<group>"; };
+		47014D3C1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramMediaCollectionViewCell.h; sourceTree = "<group>"; };
+		47014D3D1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMediaCollectionViewCell.m; sourceTree = "<group>"; };
+		47014D3E1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramMediaCollectionViewCell.xib; sourceTree = "<group>"; };
+		47014D411C084FED00F90DF9 /* overlay_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_black.png; sourceTree = "<group>"; };
 		476DCE9D1BFB06680074488A /* InstagramAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramAPI.h; sourceTree = "<group>"; };
 		476DCE9E1BFB06680074488A /* InstagramAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramAPI.m; sourceTree = "<group>"; };
 		477799751BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMOfferShortDetailsViewController.m; sourceTree = "<group>"; };
+		4793DE191C0C1E5F00BC11F5 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
+		4793DE1A1C0C1E5F00BC11F5 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
+		4793DE1B1C0C1E5F00BC11F5 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
+		4793DE1C1C0C1E5F00BC11F5 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		4793DE1D1C0C1E5F00BC11F5 /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d.png; sourceTree = "<group>"; };
+		4793DE1E1C0C1E5F00BC11F5 /* e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = e.png; sourceTree = "<group>"; };
+		4793DE1F1C0C1E5F00BC11F5 /* f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f.png; sourceTree = "<group>"; };
+		4793DE201C0C1E5F00BC11F5 /* g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = g.png; sourceTree = "<group>"; };
+		4793DE211C0C1E5F00BC11F5 /* h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = h.png; sourceTree = "<group>"; };
+		4793DE221C0C1E5F00BC11F5 /* j.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = j.png; sourceTree = "<group>"; };
+		4793DE231C0C1E5F00BC11F5 /* k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = k.png; sourceTree = "<group>"; };
+		4793DE241C0C1E5F00BC11F5 /* l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = l.png; sourceTree = "<group>"; };
+		4793DE251C0C1E5F00BC11F5 /* m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m.png; sourceTree = "<group>"; };
+		4793DE261C0C1E5F00BC11F5 /* n.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n.png; sourceTree = "<group>"; };
+		4793DE271C0C1E5F00BC11F5 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
+		4793DE281C0C1E5F00BC11F5 /* p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p.png; sourceTree = "<group>"; };
+		4793DE291C0C1E5F00BC11F5 /* photo-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-frame.png"; sourceTree = "<group>"; };
+		4793DE2A1C0C1E5F00BC11F5 /* q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q.png; sourceTree = "<group>"; };
+		4793DE2B1C0C1E5F00BC11F5 /* r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = r.png; sourceTree = "<group>"; };
+		4793DE2C1C0C1E5F00BC11F5 /* s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s.png; sourceTree = "<group>"; };
 		47E66D851C071D5300D475C6 /* GigsOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GigsOfferList.h; sourceTree = "<group>"; };
 		47E66D861C071D5300D475C6 /* GigsOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GigsOfferList.m; sourceTree = "<group>"; };
 		4A5C08661BD66C460022EE22 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
@@ -258,6 +310,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4793DE181C0C1E5F00BC11F5 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				4793DE191C0C1E5F00BC11F5 /* a.png */,
+				4793DE1A1C0C1E5F00BC11F5 /* b.png */,
+				4793DE1B1C0C1E5F00BC11F5 /* c.png */,
+				4793DE1C1C0C1E5F00BC11F5 /* close@2x.png */,
+				4793DE1D1C0C1E5F00BC11F5 /* d.png */,
+				4793DE1E1C0C1E5F00BC11F5 /* e.png */,
+				4793DE1F1C0C1E5F00BC11F5 /* f.png */,
+				4793DE201C0C1E5F00BC11F5 /* g.png */,
+				4793DE211C0C1E5F00BC11F5 /* h.png */,
+				4793DE221C0C1E5F00BC11F5 /* j.png */,
+				4793DE231C0C1E5F00BC11F5 /* k.png */,
+				4793DE241C0C1E5F00BC11F5 /* l.png */,
+				4793DE251C0C1E5F00BC11F5 /* m.png */,
+				4793DE261C0C1E5F00BC11F5 /* n.png */,
+				4793DE271C0C1E5F00BC11F5 /* o.png */,
+				4793DE281C0C1E5F00BC11F5 /* p.png */,
+				4793DE291C0C1E5F00BC11F5 /* photo-frame.png */,
+				4793DE2A1C0C1E5F00BC11F5 /* q.png */,
+				4793DE2B1C0C1E5F00BC11F5 /* r.png */,
+				4793DE2C1C0C1E5F00BC11F5 /* s.png */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
 		6C028D121BD4FC0A00CA393C = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +416,8 @@
 		6C028D4D1BD4FC7000CA393C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4793DE181C0C1E5F00BC11F5 /* Avatar */,
+				47014D411C084FED00F90DF9 /* overlay_black.png */,
 				6C2D74181BD522ED00A5BC3F /* app_icon 3.png */,
 				6C028DE61BD511FB00CA393C /* followers_red.jpg */,
 				6C028D5F1BD4FD0A00CA393C /* settings.png */,
@@ -439,6 +520,12 @@
 				477799751BEC7E7500F3B180 /* SAMOfferShortDetailsViewController.m */,
 				6C028D8A1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.h */,
 				6C028D8B1BD4FD8A00CA393C /* ItemElaborateDetailsViewController.m */,
+				47014D371C082E7B00F90DF9 /* InstagramMediaViewController.h */,
+				47014D381C082E7B00F90DF9 /* InstagramMediaViewController.m */,
+				47014D391C082E7B00F90DF9 /* InstagramMediaViewController.xib */,
+				47014D3C1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.h */,
+				47014D3D1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m */,
+				47014D3E1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.xib */,
 				6C77F9481BE73E90002DF037 /* Settings */,
 				6C77F9471BE73E7C002DF037 /* Profile */,
 				6C77F9461BE73E74002DF037 /* Map */,
@@ -668,28 +755,51 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4793DE341C0C1E5F00BC11F5 /* g.png in Resources */,
 				6C028D741BD4FD0A00CA393C /* profile.png in Resources */,
+				4793DE301C0C1E5F00BC11F5 /* close@2x.png in Resources */,
+				4793DE321C0C1E5F00BC11F5 /* e.png in Resources */,
 				6C028D6B1BD4FD0A00CA393C /* settings.png in Resources */,
+				47014D421C084FED00F90DF9 /* overlay_black.png in Resources */,
+				4793DE3D1C0C1E5F00BC11F5 /* photo-frame.png in Resources */,
 				6C028DE71BD511FB00CA393C /* followers_red.jpg in Resources */,
 				6C2D74191BD522ED00A5BC3F /* app_icon 3.png in Resources */,
 				6C028D6D1BD4FD0A00CA393C /* img1.jpg in Resources */,
+				4793DE2E1C0C1E5F00BC11F5 /* b.png in Resources */,
 				6C028D751BD4FD0A00CA393C /* map.png in Resources */,
 				6C028D2F1BD4FC0A00CA393C /* LaunchScreen.xib in Resources */,
+				4793DE3A1C0C1E5F00BC11F5 /* n.png in Resources */,
 				6C028D701BD4FD0A00CA393C /* no-new-messages-icon.jpg in Resources */,
+				4793DE391C0C1E5F00BC11F5 /* m.png in Resources */,
+				4793DE3B1C0C1E5F00BC11F5 /* o.png in Resources */,
 				6C028D9C1BD4FDB700CA393C /* Main.storyboard in Resources */,
+				4793DE311C0C1E5F00BC11F5 /* d.png in Resources */,
+				4793DE371C0C1E5F00BC11F5 /* k.png in Resources */,
 				4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */,
+				47014D401C084A2900F90DF9 /* InstagramMediaCollectionViewCell.xib in Resources */,
+				4793DE3F1C0C1E5F00BC11F5 /* r.png in Resources */,
 				6C028D2C1BD4FC0A00CA393C /* Images.xcassets in Resources */,
 				6C028D6F1BD4FD0A00CA393C /* images.jpeg in Resources */,
+				4793DE3E1C0C1E5F00BC11F5 /* q.png in Resources */,
 				6C028D6C1BD4FD0A00CA393C /* light_profile_img.png in Resources */,
+				4793DE401C0C1E5F00BC11F5 /* s.png in Resources */,
 				6C028D6E1BD4FD0A00CA393C /* img2.jpeg in Resources */,
 				6C028DB21BD4FEA100CA393C /* SVProgressHUD.bundle in Resources */,
+				4793DE351C0C1E5F00BC11F5 /* h.png in Resources */,
 				6C028D721BD4FD0A00CA393C /* list.png in Resources */,
 				6C77F9511BE74236002DF037 /* InboxTableViewCell.xib in Resources */,
+				4793DE3C1C0C1E5F00BC11F5 /* p.png in Resources */,
 				6C028D711BD4FD0A00CA393C /* plusGreen.png in Resources */,
 				6C77F9451BE73E19002DF037 /* SAMessageReplyViewController.xib in Resources */,
 				6C77F9431BE73E19002DF037 /* SAMessageDetailsViewController.xib in Resources */,
+				4793DE2F1C0C1E5F00BC11F5 /* c.png in Resources */,
 				6C028D731BD4FD0A00CA393C /* message.png in Resources */,
+				4793DE361C0C1E5F00BC11F5 /* j.png in Resources */,
 				6C028D761BD4FD0A00CA393C /* left-arrow.png in Resources */,
+				47014D3B1C082E7B00F90DF9 /* InstagramMediaViewController.xib in Resources */,
+				4793DE381C0C1E5F00BC11F5 /* l.png in Resources */,
+				4793DE331C0C1E5F00BC11F5 /* f.png in Resources */,
+				4793DE2D1C0C1E5F00BC11F5 /* a.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,10 +891,12 @@
 				6C77F9441BE73E19002DF037 /* SAMessageReplyViewController.m in Sources */,
 				6C028DE21BD4FED100CA393C /* UIImage+WebP.m in Sources */,
 				6C028DDE1BD4FED100CA393C /* SDWebImagePrefetcher.m in Sources */,
+				47014D3F1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m in Sources */,
 				6C028D5D1BD4FCF500CA393C /* OfferLogic.m in Sources */,
 				6C028DAD1BD4FE5600CA393C /* BSShortDescriptionView.m in Sources */,
 				6C028D9A1BD4FD8A00CA393C /* SuggestMerchantViewController.m in Sources */,
 				6C77F9421BE73E19002DF037 /* SAMessageDetailsViewController.m in Sources */,
+				47014D3A1C082E7B00F90DF9 /* InstagramMediaViewController.m in Sources */,
 				6C028DAA1BD4FE5600CA393C /* DWBubbleMenuButton.m in Sources */,
 				6C77F9541BE74275002DF037 /* SAMMessageViewController.m in Sources */,
 				6C028DD61BD4FED100CA393C /* MKAnnotationView+WebCache.m in Sources */,

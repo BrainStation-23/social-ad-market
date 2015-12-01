@@ -34,9 +34,14 @@
                         stringForKey:@"UserID"];
     
     
+    userID = @"1599700360";
+    [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"UserID"];
+
+    
    // NSString *accessToken = [[NSUserDefaults standardUserDefaults]
      //                   stringForKey:@"accessToken"];
-
+    //SocialAdMarket[2248:51974] 1599700360
+    NSLog(@"%@",userID);
     if(userID.length){
         SocialAddMarketViewController *homeViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MainViewController"];
         self.customNav = [[UINavigationController alloc] initWithRootViewController:homeViewController];

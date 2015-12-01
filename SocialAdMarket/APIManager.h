@@ -20,6 +20,9 @@
 +(APIManager*) sharedManager;
 
 @property (nonatomic, retain) NSMutableArray *gigsOfferList;
+@property (nonatomic, retain) NSMutableArray *localOfferList;
+
+
 -(void)getSentItems:(NSString *)currentUserId;
 -(void)getInboxItems:(NSString *)currentUserId;
 -(void)viewUserInboxMessage:(NSString *)currentUserId WithId:(NSString *)Id;
@@ -27,6 +30,9 @@
 -(void)replyMessage:(NSString *)currentUserId WithParameters:(NSDictionary *)parameters;
 - (void)loadMedia;
 -(void)getGigsOffers:(NSString *)currentUserId WithPageIndex:(NSInteger )pageIndex;
+
+
+-(void)getUserLocalOffers:(NSInteger)pageIndex;
 
 @end
 
@@ -40,4 +46,7 @@
 - (void) successFullyDeleteMessage;
 - (void) successFullyReadMessage;
 - (void) gotGigsOffers:(NSMutableArray *)gigsOfferArray;
+- (void) gotLocalOffers:(NSMutableArray *)localOfferArray;
+
+-(void) gotInstagramMedia:(NSArray *)mediaArray;
 @end

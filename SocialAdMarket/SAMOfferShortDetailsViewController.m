@@ -12,6 +12,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "APIManager.h"
+
+#import "InstagramMediaViewController.h"
+
 static AFHTTPRequestOperationManager *manager;
 
 @interface SAMOfferShortDetailsViewController (){
@@ -51,13 +54,11 @@ static AFHTTPRequestOperationManager *manager;
     NSLog(@"%@",self.offer);
     
     
-    APIManager *manager = [APIManager sharedManager];
-    [manager loadMedia];
+    //APIManager *manager = [APIManager sharedManager];
+    //[manager loadMedia];
     
-    /*
+    
     if(self.flagForGigs==YES){
-        
-        
         
         hasFollowers = self.gigsOfferList.SwapbaleByFollowerRules;
         isAlreadySwapped =self.gigsOfferList.IsAlreadySwapped;
@@ -155,12 +156,8 @@ static AFHTTPRequestOperationManager *manager;
                                          }];
     }
     
-
-    
-    
-    
     }
-    */
+    
  
 }
 
@@ -173,7 +170,6 @@ static AFHTTPRequestOperationManager *manager;
 
 
 -(void)gestureHandlerMethod:(UITapGestureRecognizer*)sender{
-    
     
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -241,6 +237,9 @@ static AFHTTPRequestOperationManager *manager;
 
 - (IBAction)swapBtnAct:(id)sender {
     
+    
+    
+    
     if([self canSwap]){
         
         SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
@@ -252,9 +251,14 @@ static AFHTTPRequestOperationManager *manager;
         NSString *offerId;
         if (self.flagForGigs==YES) {
              offerId= [NSString stringWithFormat:@"%ld",(long)self.gigsOfferList.Idd];
+            
+            InstagramMediaViewController *IM = [[InstagramMediaViewController alloc]initWithNibName:@"InstagramMediaViewController" bundle:nil];
+            IM.gigsOfferId = offerId;
+            [self.navigationController pushViewController:IM animated:YES];
+
 
         }
-        else
+        else{
           offerId = [NSString stringWithFormat:@"%@",self.offer.Id];
           NSDictionary *parameters = @{@"BsInstagramUserId":[userWithOffers getUserID] ,@"OfferId": offerId};
           NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@",BASE_URL,OFFERSWAP];
@@ -276,6 +280,7 @@ static AFHTTPRequestOperationManager *manager;
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                   NSLog(@"Request failure. %@",error);
               }];
+        }
     }
     else if (![self hasEnoughFollowers]){
         UIAlertView *alertMessage =[[UIAlertView alloc]initWithTitle:@"Swap Failed!"

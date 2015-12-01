@@ -27,5 +27,5 @@
 
 @property (nonatomic, retain) CLLocation *currentLocation;
 
-
+//@property (nonatomic, retain) NSString *instagramMediaId;
 @end

@@ -21,7 +21,7 @@
 #import "SAMMessageViewController.h"
 #import "SAMProfileViewController.h"
 
-@interface SocialAddMarketViewController : BaseViewController<BaseViewControllerDelegate, BSCustomSegmentedViewDelegate, UITableViewDataSource, UITableViewDelegate,OfferLogicDelegate>
+@interface SocialAddMarketViewController : BaseViewController<BaseViewControllerDelegate, BSCustomSegmentedViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) NSMutableArray *localOffers;
 @property(nonatomic, strong) NSMutableArray *gigsOffers;

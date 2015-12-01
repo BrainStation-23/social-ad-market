@@ -25,9 +25,9 @@ static AFHTTPRequestOperationManager *manager;
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
     
-    locationManager = [[CLLocationManager alloc] init] ;
-    locationManager.delegate=self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    //locationManager = [[CLLocationManager alloc] init] ;
+    //locationManager.delegate=self;
+    //locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
 //    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0){
 //        NSUInteger code = [CLLocationManager authorizationStatus];
@@ -86,12 +86,7 @@ static AFHTTPRequestOperationManager *manager;
                     [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userId] forHTTPHeaderField:@"UserId"];
                     NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,OFFERLIST_URL,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,(long)pageIndex];
                   
-                    
-                   // NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,LOCALOFFERLIST_URL,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,(long)pageIndex];
 
-                   // NSString *offerTodayAndFutureUrl=[NSString stringWithFormat:@"%@Offer/GetGigsOffersTodayAndFuture?lat=23&lon=90&pageIndex=0",BASE_URL];
-
-                    
                     [userWithOffers setCurrentLocation:DELEGATE.currentLocation];
                     
                     [manager GET: offerTodayAndFutureUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -130,18 +125,18 @@ static AFHTTPRequestOperationManager *manager;
     [userWithOffers setOfferList:offerListData];
 }
 
-#pragma mark - CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertView *errorAlert = [[UIAlertView alloc]
-                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    currentLocation = newLocation;
-    
-}
+//#pragma mark - CLLocationManagerDelegate
+//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+//{
+//    NSLog(@"didFailWithError: %@", error);
+//    UIAlertView *errorAlert = [[UIAlertView alloc]
+//                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [errorAlert show];
+//}
+//
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    currentLocation = newLocation;
+//    
+//}
 @end

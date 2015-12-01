@@ -64,9 +64,13 @@ static AFHTTPRequestOperationManager *manager;
     
         self.delegate=self;
         storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        offerLogic = [[OfferLogic alloc]init];
-        offerLogic.delegate = self;
+        //offerLogic = [[OfferLogic alloc]init];
+        //offerLogic.delegate = self;
         userAssets =[SAMUserPropertiesAndAssets sharedInstance];
+        NSString *userId = [[NSUserDefaults standardUserDefaults]
+                        stringForKey:@"UserID"];
+
+        [userAssets setUserID:userId];
     
     
         DELEGATE.segmentedView = [[BSCustomSegmentedView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x +20, 220, self.view.frame.size.width-40, 40)];
@@ -89,7 +93,13 @@ static AFHTTPRequestOperationManager *manager;
        if(DELEGATE.paginIndexForLocal==0){
            counterForLocal=-1;
            [SVProgressHUD showWithStatus:@"Loading..."];
-           [offerLogic setUserOffers:DELEGATE.paginIndexForLocal];
+           //[offerLogic setUserOffers:DELEGATE.paginIndexForLocal];
+           APIManager *manager = [APIManager sharedManager];
+           manager.delegate = self;
+           NSString *userId = [[NSUserDefaults standardUserDefaults]
+                               stringForKey:@"UserID"];
+           NSLog(@"%@",userId);
+           [manager getUserLocalOffers:DELEGATE.paginIndexForGigs];
       }
     
     
@@ -107,17 +117,7 @@ static AFHTTPRequestOperationManager *manager;
 
     
 }
-#pragma mark - APIManager Delegate
 
--(void)gotGigsOffers:(NSMutableArray *)gigsOfferList{
-    
-    self.gigsOffers = [gigsOfferList copy];
-    
-    [self.saTableView reloadData];
-    
-    [SVProgressHUD dismiss];
-    
-}
 - (void)refreshControlAction:(UIRefreshControl *)sender
 {
     NSLog(@"refreshControlAction");
@@ -303,6 +303,7 @@ static AFHTTPRequestOperationManager *manager;
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    
     self.navigationController.navigationBar.hidden=YES;
     DELEGATE.segmentedView.hidden=NO;
     //DELEGATE.paginIndex=0;
@@ -645,18 +646,35 @@ static AFHTTPRequestOperationManager *manager;
                 {
                     [SVProgressHUD showWithStatus:@"Loading..."];
                     NSLog(@"DELEGATE.paginIndex===%ld",(long)DELEGATE.paginIndexForGigs);
-                    [offerLogic setUserOffers:DELEGATE.paginIndexForGigs];
+                    
+                    APIManager *manager = [APIManager sharedManager];
+                    manager.delegate = self;
+                    NSString *userId = [[NSUserDefaults standardUserDefaults]
+                                        stringForKey:@"UserID"];
+                    NSLog(@"%@",userId);
+                    [manager getGigsOffers:userId WithPageIndex:DELEGATE.paginIndexForGigs];
                 }
-                
             }
-            
             else {
                DELEGATE.paginIndexForLocal = DELEGATE.paginIndexForLocal+1;
                 if(DELEGATE.paginIndexForLocal < DELEGATE.totalPageForLocal)
                   {
-                   [SVProgressHUD showWithStatus:@"Loading..."];
-                   NSLog(@"DELEGATE.paginIndex===%ld",(long)DELEGATE.paginIndexForLocal);
-                  [offerLogic setUserOffers:DELEGATE.paginIndexForLocal];
+                      
+                      [SVProgressHUD showWithStatus:@"Loading..."];
+                      NSLog(@"DELEGATE.paginIndex===%ld",(long)DELEGATE.paginIndexForGigs);
+                      
+                      APIManager *manager = [APIManager sharedManager];
+                      manager.delegate = self;
+                      NSString *userId = [[NSUserDefaults standardUserDefaults]
+                                          stringForKey:@"UserID"];
+                      NSLog(@"%@",userId);
+                      [manager getUserLocalOffers:DELEGATE.paginIndexForGigs];
+   
+                      
+                      
+                   //[SVProgressHUD showWithStatus:@"Loading..."];
+                   //NSLog(@"DELEGATE.paginIndex===%ld",(long)DELEGATE.paginIndexForLocal);
+                  //[offerLogic setUserOffers:DELEGATE.paginIndexForLocal];
             }
           }
             
@@ -664,20 +682,35 @@ static AFHTTPRequestOperationManager *manager;
         
     }
 }
-#pragma mark - OfferLogicDelegate method
 
--(void)setupOfferDownloadCompleted:(OfferLogic*)offerLogic{
+#pragma mark - APIManagerDelegate
+
+//-(void)setupOfferDownloadCompleted:(OfferLogic*)offerLogic{
+//    
+//    self.localOffers = [[userAssets getOfferList] mutableCopy];
+//    
+//    [self.saTableView reloadData];
+//    [SVProgressHUD dismiss];
+//    
+//}
+
+-(void)gotGigsOffers:(NSMutableArray *)gigsOfferList{
     
-    self.localOffers = [[userAssets getOfferList] mutableCopy];
-    
-    
+    self.gigsOffers = [gigsOfferList copy];
     [self.saTableView reloadData];
     [SVProgressHUD dismiss];
     
 }
 
+-(void) gotLocalOffers:(NSMutableArray *)localOfferArray{
+    
+    self.localOffers = [[userAssets getOfferList] mutableCopy];
+    [self.saTableView reloadData];
+    [SVProgressHUD dismiss];
 
-
+    
+    
+}
 
 
 

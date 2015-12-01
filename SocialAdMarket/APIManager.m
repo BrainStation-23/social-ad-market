@@ -199,26 +199,56 @@ static APIManager* sharedManger = nil;
     }];
 
 }
+-(void)getUserLocalOffers:(NSInteger)pageIndex{
+    
+    
+    
+    
+    
+    NSString *userId = [[NSUserDefaults standardUserDefaults]
+                        stringForKey:@"UserID"];
+    
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userId] forHTTPHeaderField:@"UserId"];
+    
+    NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,OFFERLIST_URL,DELEGATE.currentLocation.coordinate.latitude ,DELEGATE.currentLocation.coordinate.longitude,(long)pageIndex];
+    
+            [manager GET: offerTodayAndFutureUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                
+                NSMutableDictionary *offerListDictionary=[[(NSMutableDictionary *)responseObject objectForKey:@"ResponseResult"] objectForKey:@"OfferList"];
+                
+                if(pageIndex==0){
+                    DELEGATE.totalPageForLocal = [[[responseObject objectForKey:@"ResponseResult"]objectForKey:@"TotalPage"] integerValue];
+                    self.localOfferList=[[NSMutableArray alloc] init];
+                }
+                
+                for(NSDictionary *dic in offerListDictionary){
+                    
+                    BSOfferDetails *offerWithDetails=[[BSOfferDetails alloc] initWithDictionary:dic];
+                    [self.localOfferList addObject:offerWithDetails];
+                    
+                }
+                //[self setUserWithUserID:userId andOfferList:offerList];
+                
+                [self.delegate gotLocalOffers:self.localOfferList];
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"Error: %@", error);
+            }];
+}
+
 
 
 -(void)getGigsOffers:(NSString *)currentUserId WithPageIndex:(NSInteger )pageIndex{
     
-    //http://104.215.139.165:2323//api/Offer/GetGigsOffersTodayAndFuture?lat=23&lon=90&pageIndex=0
     
-    //NSLog(@"%@",currentUserId);
+     [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",currentUserId]forHTTPHeaderField:@"UserId"];
     
-    //manager = [AFHTTPRequestOperationManager manager];
-    // manager.responseSerializer=[AFJSONResponseSerializer serializer];
-    // manager.requestSerializer=[AFJSONRequestSerializer serializer];
-    //SAMUserPropertiesAndAssets *userWithOffers = [SAMUserPropertiesAndAssets sharedInstance];
+    //NSString *userSentItems=[NSString stringWithFormat:@"%@%@?lat=23&lon=90&pageIndex=0",BASE_URL, LOCALOFFERLIST_URL];
+    
+    
+    NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,LOCALOFFERLIST_URL,DELEGATE.currentLocation.coordinate.latitude ,DELEGATE.currentLocation.coordinate.longitude,(long)pageIndex];
 
-    
-   // NSString *offerTodayAndFutureUrl=[NSString stringWithFormat: @"%@%@?lat=%g&lon=%g&pageIndex=%ld",BASE_URL,LOCALOFFERLIST_URL,currentLocation.coordinate.latitude,currentLocation.coordinate.longitude,(long)pageIndex];
-    
-    [manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",currentUserId]forHTTPHeaderField:@"UserId"];
-    
-    NSString *userSentItems=[NSString stringWithFormat:@"%@%@?lat=23&lon=90&pageIndex=0",BASE_URL, LOCALOFFERLIST_URL];
-    [manager GET:userSentItems parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:offerTodayAndFutureUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Reply responseObject===%@",responseObject);
         
         
@@ -296,12 +326,7 @@ static APIManager* sharedManger = nil;
 
     
     //NSString *link= [NSString stringWithFormat:@"https://api.instagram.com/v1/users/%@/media/recent?access_token=%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"UserID"],[[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"]];
-    
-    
-    
     //NSString *link= [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/snow/media/recent?access_token=%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"]];
-    
-    
     //NSString *link=[NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/feed/?access_token=%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"]];
 
     NSString *link=[NSString stringWithFormat:@"https://api.instagram.com/v1/users/self/media/recent/?access_token=%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"]];
@@ -311,30 +336,32 @@ static APIManager* sharedManger = nil;
     
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:link]];
-    
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          
          NSLog(@"responseObject===%@",responseObject);
-         [SVProgressHUD dismiss];
          
              NSArray* userMedia = (NSArray*)[responseObject objectForKey:@"data"];
              NSMutableArray *instagramMedia = [[NSMutableArray alloc] init];
              for(NSDictionary *dic in userMedia){
-                 InstagramAPI *IAPI = [[InstagramAPI alloc] init];
-                 //IAPI.created_time = [[dic objectForKey:@"user"] valueForKey:@"username"];
-                 IAPI.full_name =    [[dic objectForKey:@"user"]valueForKey:@"full_name"];
-                 IAPI.idd = [[[dic objectForKey:@"user"] valueForKey:@"id"] integerValue];
-                 IAPI.profile_picture =    [[dic objectForKey:@"user"]valueForKey:@"profile_picture"];
-                 IAPI.username =    [[dic objectForKey:@"user"] valueForKey:@"username"];
-                 IAPI.images = [[[dic objectForKey:@"images"] objectForKey:@"standard_resolution"]valueForKey:@"url"];
-                [instagramMedia addObject:IAPI];
+                 InstagramAPI *IAPI   =[[InstagramAPI alloc] init];
+                 //IAPI.created_time  =[[dic objectForKey:@"user"] valueForKey:@"username"];
+                 IAPI.full_name       =[[dic objectForKey:@"user"]valueForKey:@"full_name"];
+                 IAPI.idd             =[[[dic objectForKey:@"user"] valueForKey:@"id"] integerValue];
+                 IAPI.profile_picture =[[dic objectForKey:@"user"]valueForKey:@"profile_picture"];
+                 IAPI.username        =[[dic objectForKey:@"user"] valueForKey:@"username"];
+                 IAPI.images          =[[[dic objectForKey:@"images"] objectForKey:@"standard_resolution"]valueForKey:@"url"];
+                 IAPI.imageID         =[dic valueForKey:@"id"];
+                 NSLog(@"imageID===%@",IAPI.imageID);
+                 
+                 [instagramMedia addObject:IAPI];
              }
-             //[delegate gotInboxItems:instagramMedia];
+         
+             [delegate gotInstagramMedia:instagramMedia];
+             [SVProgressHUD dismiss];
+
      }
          failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
