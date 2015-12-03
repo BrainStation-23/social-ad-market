@@ -36,7 +36,6 @@
 
 @end
 
-
 @protocol APIManagerDelegate
 @optional
 

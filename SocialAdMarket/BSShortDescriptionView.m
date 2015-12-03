@@ -23,12 +23,12 @@
          self.titleLabel.text = @"Test Title";
         [self addSubview: self.titleLabel];
         
-        self.briefDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, self.titleLabel.bounds.size.height+20, self.bounds.size.width-40, 50)];
+        self.briefDescriptionLabel = [[UITextView alloc] initWithFrame:CGRectMake(20, self.titleLabel.bounds.size.height+20, self.bounds.size.width-40, 50)];
         self.briefDescriptionLabel.backgroundColor = [UIColor clearColor];
         self.briefDescriptionLabel.textAlignment = NSTextAlignmentLeft;
         self.briefDescriptionLabel.textColor = [UIColor grayColor];
-        self.briefDescriptionLabel.numberOfLines = 2;
-        self.briefDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        //self.briefDescriptionLabel.numberOfLines = 2;
+        //self.briefDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.briefDescriptionLabel.text = @"Telechargez et consultez les catalogues et les tarifs de la gamme Audi au format PDF";
         [self addSubview: self.briefDescriptionLabel];
         

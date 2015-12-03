@@ -122,8 +122,6 @@ static AFHTTPRequestOperationManager *manager;
 {
     NSLog(@"refreshControlAction");
     
-
-    
     if(flagForLocalIndex==YES && self.localOffers.count){
        counterForLocal=-1;
     
@@ -707,8 +705,6 @@ static AFHTTPRequestOperationManager *manager;
     self.localOffers = [[userAssets getOfferList] mutableCopy];
     [self.saTableView reloadData];
     [SVProgressHUD dismiss];
-
-    
     
 }
 

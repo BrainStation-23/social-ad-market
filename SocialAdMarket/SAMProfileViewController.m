@@ -21,9 +21,10 @@
     
     BOOL isAlreadySwapped;
     
-    
     BOOL parallaxWithView;
     
+    BOOL flagForLocalIndex;
+    BOOL flagForGigsIndex;
 }
 
 @end
@@ -68,6 +69,15 @@ static AFHTTPRequestOperationManager *manager;
     self.settingsBtn.frame = CGRectMake(self.view.frame.size.width-50, 22, 40, 40.0);
     [self.view addSubview:self.settingsBtn];
     
+    DELEGATE.segmentedView = [[BSCustomSegmentedView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x +20, 220, self.view.frame.size.width-40, 40)];
+    DELEGATE.segmentedView.backgroundColor = [UIColor lightGrayColor];
+    DELEGATE.segmentedView.delegate=self;
+    [DELEGATE.window addSubview:DELEGATE.segmentedView];
+    [DELEGATE.segmentedView.localButton setBackgroundColor:[UIColor darkGrayColor]];
+    
+    flagForLocalIndex = YES;
+    flagForGigsIndex=NO;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -99,7 +109,6 @@ static AFHTTPRequestOperationManager *manager;
         //        [DELEGATE.segmentedView.localButton setBackgroundColor:[UIColor darkGrayColor]];
         
         [self.swappedTable addParallaxWithView:imageView andHeight:300];
-        
         
         parallaxWithView = YES;
         
@@ -192,10 +201,12 @@ static AFHTTPRequestOperationManager *manager;
         
         if([[registrationInfo objectForKey:@"Success"] intValue]==1&&[[registrationInfo objectForKey:@"ErrorCode"] intValue]==0){
             
-            for(NSDictionary *dic in (NSArray *)[(NSDictionary *)responseObject objectForKey:@"ResponseResult"]){
+            for(NSDictionary *dic in (NSArray *)[(NSDictionary *)[responseObject objectForKey:@"ResponseResult"] objectForKey:@"GigsOfferList"]){
+                
                 SwappedOfferDetails *swappedItem =[[SwappedOfferDetails alloc] initWithDictionary:dic];
                 [swapppedOffers addObject:swappedItem];
             }
+            
         }
         [SVProgressHUD dismiss];
         [self.swappedTable reloadData];
@@ -211,7 +222,17 @@ static AFHTTPRequestOperationManager *manager;
 #pragma mark- Action method
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [swapppedOffers count];
+    
+    if(flagForGigsIndex==YES){
+        
+        return  self.gigsOffers.count;
+    }
+    else if (flagForLocalIndex==YES){
+        
+        return [self.localOffers count];
+    }
+    
+    return 0;
 }
 
 
@@ -265,8 +286,6 @@ static AFHTTPRequestOperationManager *manager;
 
 - (void)loadView:(UIButton *)sender {
     
-    
-    
     CATransition *transition = [CATransition animation];
     transition.duration = 0.4;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
@@ -291,6 +310,94 @@ static AFHTTPRequestOperationManager *manager;
         SAMMessageViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"MessageViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+#pragma marks- Custom Segment Button View Delegate
+
+-(void)selectedOption:(UIButton*)sender{
+    
+    UIButton *segmentButton = (UIButton*)sender;
+    
+    if(segmentButton.tag==1)
+    {
+        flagForGigsIndex = YES;
+        flagForLocalIndex = NO;
+        
+        [DELEGATE.segmentedView.gigsButton setSelected:YES];
+        CATransition *transition = [self setTransitionPropertiesWithType:kCATransitionFromLeft];
+        [self.view.layer addAnimation:transition forKey:nil];
+        if(!self.gigsOffers.count){
+            [SVProgressHUD showWithStatus:@"Loading..."];
+            APIManager *manager = [APIManager sharedManager];
+            manager.delegate = self;
+            NSString *userId = [[NSUserDefaults standardUserDefaults]
+                                stringForKey:@"UserID"];
+            NSLog(@"%@",userId);
+            [manager getGigsOffers:userId WithPageIndex:0];
+        }
+        [self.swappedTable reloadData];
+    }
+    else
+    {
+        flagForGigsIndex = NO;
+        flagForLocalIndex = YES;
+        
+        [DELEGATE.segmentedView.localButton setSelected:YES];
+        CATransition *transition = [self setTransitionPropertiesWithType:kCATransitionFromRight];
+        [self.view.layer addAnimation:transition forKey:nil];
+        
+        if(!self.localOffers.count){
+            [SVProgressHUD showWithStatus:@"Loading..."];
+            APIManager *manager = [APIManager sharedManager];
+            manager.delegate = self;
+            NSString *userId = [[NSUserDefaults standardUserDefaults]
+                                stringForKey:@"UserID"];
+            NSLog(@"%@",userId);
+            //[manager getGigsOffers:userId WithPageIndex:0];
+            [manager getUserLocalOffers:0];
+        }
+        
+        [self.swappedTable reloadData];
+        
+    }
+    
+}
+
+#pragma mark-utility Method.
+-(CATransition*)setTransitionPropertiesWithType:(NSString*)transitionSubType{
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.5;
+    transition.type = kCATransitionPush;
+    transition.subtype = transitionSubType;
+    [transition setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    return transition;
+}
+
+#pragma mark - APIManagerDelegate
+
+//-(void)setupOfferDownloadCompleted:(OfferLogic*)offerLogic{
+//
+//    self.localOffers = [[userAssets getOfferList] mutableCopy];
+//
+//    [self.saTableView reloadData];
+//    [SVProgressHUD dismiss];
+//
+//}
+
+-(void)gotGigsOffers:(NSMutableArray *)gigsOfferList{
+    
+    self.gigsOffers = [gigsOfferList copy];
+    [self.swappedTable reloadData];
+    [SVProgressHUD dismiss];
+    
+}
+
+-(void) gotLocalOffers:(NSMutableArray *)localOfferArray{
+    
+    self.localOffers = [[userAssets getOfferList] mutableCopy];
+    [self.swappedTable reloadData];
+    [SVProgressHUD dismiss];
+    
 }
 
 @end

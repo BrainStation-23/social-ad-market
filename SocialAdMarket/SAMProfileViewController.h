@@ -14,8 +14,10 @@
 #import "SocialAddMarketViewController.h"
 #import "SAMSettingsViewController.h"
 #import "SAMTableViewCell.h"
+#import "BSCustomSegmentedView.h"
+#import "APIManager.h"
 
-@interface SAMProfileViewController : BaseViewController<BaseViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface SAMProfileViewController : BaseViewController<BSCustomSegmentedViewDelegate,BaseViewControllerDelegate, UITableViewDataSource, UITableViewDelegate,APIManagerDelegate>
 
 @property(nonatomic, strong) IBOutlet UILabel *userName;
 @property(nonatomic, strong) IBOutlet UITableView *swappedTable;
@@ -24,4 +26,7 @@
 -(IBAction)ShowSettingsPage:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *settingsBtn;
 
+
+@property(nonatomic, strong) NSMutableArray *localOffers;
+@property(nonatomic, strong) NSMutableArray *gigsOffers;
 @end

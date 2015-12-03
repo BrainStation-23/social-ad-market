@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "APIManager.h"
 #import "BaseViewController.h"
 #import "SAMMessageViewController.h"
 #import "SAMProfileViewController.h"

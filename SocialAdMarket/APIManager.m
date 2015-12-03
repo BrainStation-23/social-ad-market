@@ -201,10 +201,6 @@ static APIManager* sharedManger = nil;
 }
 -(void)getUserLocalOffers:(NSInteger)pageIndex{
     
-    
-    
-    
-    
     NSString *userId = [[NSUserDefaults standardUserDefaults]
                         stringForKey:@"UserID"];
     
@@ -354,7 +350,7 @@ static APIManager* sharedManger = nil;
                  IAPI.username        =[[dic objectForKey:@"user"] valueForKey:@"username"];
                  IAPI.images          =[[[dic objectForKey:@"images"] objectForKey:@"standard_resolution"]valueForKey:@"url"];
                  IAPI.imageID         =[dic valueForKey:@"id"];
-                 NSLog(@"imageID===%@",IAPI.imageID);
+                 NSLog(@"imageID===%@",IAPI.images);
                  
                  [instagramMedia addObject:IAPI];
              }

@@ -10,6 +10,5 @@
 
 @interface InstagramMediaViewController : UIViewController
 
-
 @property (nonatomic, retain) NSString *gigsOfferId;
 @end

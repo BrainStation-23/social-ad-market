@@ -64,8 +64,8 @@ static AFHTTPRequestOperationManager *manager;
         isAlreadySwapped =self.gigsOfferList.IsAlreadySwapped;
         self.shortDescriptionView.titleLabel.text =self.gigsOfferList.Title;
         self.shortDescriptionView.subTitleLabel.text =self.gigsOfferList.SubTitle;
-        self.shortDescriptionView.briefDescriptionLabel.text =self.gigsOfferList.Details;
-        
+        //self.shortDescriptionView.briefDescriptionLabel.text =self.gigsOfferList.Details;
+        [self generateBriefDescriptionLabelText:true];
         self.shortDescriptionView.requiredFollowersLabel.text = [[NSString stringWithFormat:@"%ld",(long)self.gigsOfferList.RequiredMinimumInstagramFollowers] stringByAppendingString:@" followers"];
         
         if([NSString stringWithFormat:@"%f",self.gigsOfferList.Distance]!=nil || ![NSString stringWithFormat:@"%f",self.gigsOfferList.Distance].length){
@@ -88,8 +88,6 @@ static AFHTTPRequestOperationManager *manager;
             [self.shortDescriptionView.swapButton setTitle:@"You Need More Followers" forState:UIControlStateNormal];
             
         }
-        
-        
         
         if (self.gigsOfferList.PictureUrl) {
             __block UIActivityIndicatorView *activityIndicator;
@@ -116,6 +114,7 @@ static AFHTTPRequestOperationManager *manager;
        self.shortDescriptionView.titleLabel.text =self.offer.Title;
        self.shortDescriptionView.subTitleLabel.text =self.offer.SubTitle;
        self.shortDescriptionView.briefDescriptionLabel.text =self.offer.Details;
+        
        self.shortDescriptionView.requiredFollowersLabel.text = [[NSString stringWithFormat:@"%@",self.offer.RequiredMinimumInstagramFollowers] stringByAppendingString:@" followers"];
     
     if([NSString stringWithFormat:@"%@",self.offer.Distance]!=nil || ![NSString stringWithFormat:@"%@",self.offer.Distance].length){
@@ -333,6 +332,43 @@ static AFHTTPRequestOperationManager *manager;
     if(alertView.tag!=0){
           [self gestureHandlerMethod:tapRecognizer];
     }
+}
+
+#pragma mark- other methods
+- (void) generateBriefDescriptionLabelText: (BOOL)type{
+    NSMutableAttributedString *text=[[NSMutableAttributedString alloc] initWithString:@"" ];
+    if(type){
+        [text appendAttributedString:[self convertAttributedString: @"AboutTheBrand: " :self.gigsOfferList.AboutTheBrand]];
+        [text appendAttributedString:[self convertAttributedString: @"\nDetails: " :self.gigsOfferList.Details]];
+        [text appendAttributedString:[self convertAttributedString: @"\nIntagramHandle: " :self.gigsOfferList.IntagramHandle]];
+        
+        
+    }else{
+        
+    }
+    
+    self.shortDescriptionView.briefDescriptionLabel.attributedText=text;
+}
+
+- (NSMutableAttributedString *) convertAttributedString :(NSString *)string1 :(NSString *)string2{
+    NSMutableAttributedString *colorString = [[NSMutableAttributedString alloc] initWithString:string1];
+    NSRange selectedRange = NSMakeRange(0, colorString.length); // 8 characters, starting at index 0
+    [colorString beginEditing];
+    [colorString addAttribute:NSForegroundColorAttributeName
+                        value:[UIColor redColor]
+                        range:selectedRange];
+    [colorString endEditing];
+    
+    NSMutableAttributedString *staticString = [[NSMutableAttributedString alloc] initWithString:string2];
+    NSRange leftRange = NSMakeRange(0, staticString.length); // full characters, starting at index 0
+    [staticString beginEditing];
+    [staticString addAttribute:NSForegroundColorAttributeName
+                         value:[UIColor blackColor]
+                         range:leftRange];
+    [staticString endEditing];
+    [colorString appendAttributedString:staticString];
+    
+    return colorString;
 }
 
 @end

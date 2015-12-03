@@ -37,13 +37,13 @@ static AFHTTPRequestOperationManager *manager;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //APIManager *manager = [APIManager sharedManager];
+    APIManager *manager = [APIManager sharedManager];
     
-    //manager.delegate = self;
-    //[manager loadMedia];
+    manager.delegate = self;
+    [manager loadMedia];
 
     
-    instagramMediaArray = [[NSMutableArray alloc]initWithObjects:@"a.png",@"b.png",@"c.png",@"d.png",@"e.png",@"f.png",@"g.png",@"h.png",@"j.png",@"k.png",@"l.png",@"m.png",@"n.png",@"o.png",@"p.png", nil];
+   // instagramMediaArray = [[NSMutableArray alloc]initWithObjects:@"a.png",@"b.png",@"c.png",@"d.png",@"e.png",@"f.png",@"g.png",@"h.png",@"j.png",@"k.png",@"l.png",@"m.png",@"n.png",@"o.png",@"p.png", nil];
     
     [contentCollectionView registerClass:[InstagramMediaCollectionViewCell class] forCellWithReuseIdentifier:@"InstagramMediaCollectionViewCell"];
     UINib * cellNib = [UINib nibWithNibName:@"InstagramMediaCollectionViewCell" bundle:nil];
@@ -70,14 +70,11 @@ static AFHTTPRequestOperationManager *manager;
     
     if(selectedIndex != -1) {
         
-        
-        
-        
+
         
       InstagramAPI *IAPI = [instagramMediaArray objectAtIndex:selectedIndex];
      // DELEGATE.instagramMediaId = IAPI.imageID;
      // [self.navigationController popViewControllerAnimated:YES];
-        
         
         if([self canSwap]){
             
@@ -211,12 +208,12 @@ static AFHTTPRequestOperationManager *manager;
     
     if (cell) {
         
-          cell.image_View.image = [UIImage imageNamed:[instagramMediaArray objectAtIndex:indexPath.item]];
+          //cell.image_View.image = [UIImage imageNamed:[instagramMediaArray objectAtIndex:indexPath.item]];
 
         
             }
-//    InstagramAPI *IAPI = [instagramMediaArray objectAtIndex:indexPath.item];
-//    
+    InstagramAPI *IAPI = [instagramMediaArray objectAtIndex:indexPath.item];
+    
 //    if (IAPI.profile_picture) {
 //        __block UIActivityIndicatorView *activityIndicator;
 //        __weak UIImageView *weakImageView = cell.image_View;
@@ -234,6 +231,26 @@ static AFHTTPRequestOperationManager *manager;
 //    }
 
     
+    
+//    if (IAPI.profile_picture) {
+//        __block UIActivityIndicatorView *activityIndicator;
+//        __weak UIImageView *weakImageView = cell.image_View;
+//        [cell.image_View sd_setImageWithURL:[NSURL URLWithString:IAPI.profile_picture]
+//                            placeholderImage:nil
+//                                     options:SDWebImageProgressiveDownload
+//                                    progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                                        if (!activityIndicator) {
+//                                            [weakImageView addSubview:activityIndicator = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray]];
+//                                        }
+//                                    }
+//                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                   }];
+//    }
+    
+    NSLog(@"profile_picture===%@",IAPI.profile_picture);
+
+    [cell.image_View sd_setImageWithURL:[NSURL URLWithString:IAPI.images] placeholderImage:[UIImage imageNamed:@"profile.png"]];
+
     
     if(selectedIndex == indexPath.item)
         cell.overLayImage.hidden=NO;

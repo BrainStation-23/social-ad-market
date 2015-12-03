@@ -13,7 +13,7 @@
 @property(nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property(nonatomic, strong) IBOutlet UILabel *subTitleLabel; //green color
 
-@property(nonatomic, strong) IBOutlet UILabel *briefDescriptionLabel;
+@property(nonatomic, strong) IBOutlet UITextView *briefDescriptionLabel;
 
 @property(nonatomic, strong) IBOutlet UILabel *requiredFollowersLabel;
 

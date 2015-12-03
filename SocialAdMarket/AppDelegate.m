@@ -34,9 +34,9 @@
                         stringForKey:@"UserID"];
     
     
-    userID = @"1599700360";
-    [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"UserID"];
-
+    //userID = @"1599700360";
+    //[[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"UserID"];
+    //userID=@"";
     
    // NSString *accessToken = [[NSUserDefaults standardUserDefaults]
      //                   stringForKey:@"accessToken"];
@@ -69,6 +69,7 @@
             }
         }
     }
+    
     [locationManager startUpdatingLocation];
     return YES;
 }
