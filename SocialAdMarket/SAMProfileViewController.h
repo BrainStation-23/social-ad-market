@@ -12,6 +12,7 @@
 #import "SAMMapViewController.h"
 #import "SAMMessageViewController.h"
 #import "SocialAddMarketViewController.h"
+#import "ItemElaborateDetailsViewController.h"
 #import "SAMSettingsViewController.h"
 #import "SAMTableViewCell.h"
 #import "BSCustomSegmentedView.h"

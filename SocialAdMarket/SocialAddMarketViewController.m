@@ -90,7 +90,7 @@ static AFHTTPRequestOperationManager *manager;
     
         flagForLocalIndex = YES;
     
-       if(DELEGATE.paginIndexForLocal==0){
+       if(DELEGATE.paginIndexForLocal>=0){
            counterForLocal=-1;
            [SVProgressHUD showWithStatus:@"Loading..."];
            //[offerLogic setUserOffers:DELEGATE.paginIndexForLocal];
@@ -114,8 +114,6 @@ static AFHTTPRequestOperationManager *manager;
     refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
     [self.saTableView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshControlAction:) forControlEvents:UIControlEventValueChanged];
-
-    
 }
 
 - (void)refreshControlAction:(UIRefreshControl *)sender
@@ -307,13 +305,9 @@ static AFHTTPRequestOperationManager *manager;
     //DELEGATE.paginIndex=0;
     //[offerLogic setUserOffers:DELEGATE.paginIndex];
     userAssets = [SAMUserPropertiesAndAssets sharedInstance];
-    self.localOffers = [[userAssets getOfferList] mutableCopy];
+    //self.localOffers = [[userAssets getOfferList] mutableCopy];
+    
     [self.saTableView reloadData];
-    
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -375,7 +369,7 @@ static AFHTTPRequestOperationManager *manager;
     // Do whatever you need to do to the parallaxView or your subview before its frame changes
     //NSLog(@"parallaxView:willChangeFrame: %@", NSStringFromCGRect(frame));
     
-   // NSLog(@"frame.origin.x===%f frame.origin.y%f",frame.origin.x,frame.origin.y);
+    NSLog(@"frame.origin.x===%f frame.origin.y%f",frame.origin.x,frame.origin.y);
     
     //if(frame.origin.y)
     
@@ -396,8 +390,6 @@ static AFHTTPRequestOperationManager *manager;
 
         
     }
-    
-    
 }
 
 
@@ -440,11 +432,10 @@ static AFHTTPRequestOperationManager *manager;
     
     UIButton *segmentButton = (UIButton*)sender;
     
-    if(segmentButton.tag==1)
+    if(segmentButton.tag==1&&flagForGigsIndex==NO)
     {
         flagForGigsIndex = YES;
         flagForLocalIndex = NO;
-        
         [DELEGATE.segmentedView.gigsButton setSelected:YES];
         CATransition *transition = [self setTransitionPropertiesWithType:kCATransitionFromLeft];
         [self.view.layer addAnimation:transition forKey:nil];
@@ -461,12 +452,11 @@ static AFHTTPRequestOperationManager *manager;
         
           [self.saTableView reloadData];
     }
-    else
+    else if(segmentButton.tag==2&&flagForLocalIndex==NO)
        {
            
            flagForGigsIndex = NO;
            flagForLocalIndex = YES;
-           
         [DELEGATE.segmentedView.localButton setSelected:YES];
          CATransition *transition = [self setTransitionPropertiesWithType:kCATransitionFromRight];
         [self.view.layer addAnimation:transition forKey:nil];
@@ -587,17 +577,16 @@ static AFHTTPRequestOperationManager *manager;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    
     if(flagForLocalIndex==YES){
     
     SAMOfferShortDetailsViewController* detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"OfferShortDetailsViewController"];
     BSOfferDetails *offer = [self.localOffers objectAtIndex:indexPath.row];
     detailViewController.offer = offer;
+    detailViewController.flagForGigs=NO;
     self.navigationController.navigationBarHidden=YES;
     [self.navigationController pushViewController:detailViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     }
-    
     else if (flagForGigsIndex==YES){
         
         SAMOfferShortDetailsViewController* detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"OfferShortDetailsViewController"];
@@ -702,7 +691,9 @@ static AFHTTPRequestOperationManager *manager;
 
 -(void) gotLocalOffers:(NSMutableArray *)localOfferArray{
     
-    self.localOffers = [[userAssets getOfferList] mutableCopy];
+    //self.localOffers = [[userAssets getOfferList] mutableCopy];
+    self.localOffers = [localOfferArray mutableCopy];
+
     [self.saTableView reloadData];
     [SVProgressHUD dismiss];
     

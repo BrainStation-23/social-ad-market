@@ -23,13 +23,10 @@ static AFHTTPRequestOperationManager *manager;
 
 @implementation BSLoginViewController{
     BSAuthenticationUIWebView *authenticationWebView;
-    
     BOOL isAccessTokenValid;
-    
     UIButton *signOutButton;
-
-    UILabel *accessTokenTimeRemainingLabel;
     
+    UILabel *accessTokenTimeRemainingLabel;
     NSTimer *accessTokenExpirationTimer;
     double accessTokenTimeRemaining;
     
@@ -38,7 +35,6 @@ static AFHTTPRequestOperationManager *manager;
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer=[AFJSONResponseSerializer serializer];
@@ -71,7 +67,6 @@ static AFHTTPRequestOperationManager *manager;
     //[SVProgressHUD showWithStatus:@"Loading..."];
     
     isAccessTokenValid = NO;
-    
     [self authenticate];
 }
 

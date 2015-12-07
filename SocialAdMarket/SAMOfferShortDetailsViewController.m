@@ -156,7 +156,6 @@ static AFHTTPRequestOperationManager *manager;
     }
     
     }
-    
  
 }
 
@@ -166,7 +165,6 @@ static AFHTTPRequestOperationManager *manager;
 
 #pragma mark-
 #pragma mark- Gesture method
-
 
 -(void)gestureHandlerMethod:(UITapGestureRecognizer*)sender{
     
@@ -330,24 +328,37 @@ static AFHTTPRequestOperationManager *manager;
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
     if(alertView.tag!=0){
+        
           [self gestureHandlerMethod:tapRecognizer];
     }
 }
 
 #pragma mark- other methods
 - (void) generateBriefDescriptionLabelText: (BOOL)type{
-    NSMutableAttributedString *text=[[NSMutableAttributedString alloc] initWithString:@"" ];
+    NSString *text=@"";
     if(type){
-        [text appendAttributedString:[self convertAttributedString: @"AboutTheBrand: " :self.gigsOfferList.AboutTheBrand]];
-        [text appendAttributedString:[self convertAttributedString: @"\nDetails: " :self.gigsOfferList.Details]];
-        [text appendAttributedString:[self convertAttributedString: @"\nIntagramHandle: " :self.gigsOfferList.IntagramHandle]];
+        NSString *startDateString=[[self.gigsOfferList.OfferStartDateTimeUtc componentsSeparatedByString:@"T"] objectAtIndex:0];
+        startDateString=[self reverseObject:startDateString];
+        NSString *endDateString=[[self.gigsOfferList.OfferEndDateTimeUtc componentsSeparatedByString:@"T"] objectAtIndex:0];
+        endDateString=[self reverseObject:endDateString];
         
-        
+        text=self.gigsOfferList.Details;
     }else{
-        
+        text=self.offer.Details;
     }
+    //text=@"jkfslfdsfdsdfsdfjklhlwertjweqpiotreri ogydfsghjkdfshlgkhdfsjghfsdjkghldfjkghuisoteirowtyriewohtdnfgjkhfgklhdfsjkghdfjklghjkdfshgjkfdlhgkjdshfgerituerpotyiuerjkfslfdsfdsdfsdfjklhlwertjweqpiotreri ogydfsghjkdfshlgkhdfsjghfsdjkghldfjkghuisoteirowtyriewohtdnfgjkhfgklhdfsjkghdfjklghjkdfshgjkfdlhgkjdshfgerituerpotyiuerjkfslfdsfdsdfsdfjklhlwertjweqpiotreri ogydfsghjkdfshlgkhdfsjghfsdjkghldfjkghuisoteirowtyriewohtdnfgjkhfgklhdfsjkghdfjklghjkdfshgjkfdlhgkjdshfgerituerpotyiuer";
+    self.shortDescriptionView.briefDescriptionLabel.text=text;
+}
+
+-(NSString*)reverseObject:(id)string{
+    string = [NSString stringWithFormat:@"%@",string];
+    NSMutableString *endString = [NSMutableString new];
     
-    self.shortDescriptionView.briefDescriptionLabel.attributedText=text;
+    while ([string length]!=[endString length]) {
+        NSRange range = NSMakeRange([string length]-[endString length]-1, 1);
+        [endString appendString: [string substringWithRange:range]];
+    }
+    return endString;
 }
 
 - (NSMutableAttributedString *) convertAttributedString :(NSString *)string1 :(NSString *)string2{
@@ -371,4 +382,14 @@ static AFHTTPRequestOperationManager *manager;
     return colorString;
 }
 
+- (IBAction)briefButtonPressed:(UIButton *)sender {
+    UIStoryboard *mainStoryBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ItemElaborateDetailsViewController *detailsViewController=[mainStoryBoard instantiateViewControllerWithIdentifier:@"ItemElaborateDetailsViewControllerStoryboard"];
+    detailsViewController.flagForGigs=self.flagForGigs;
+    detailsViewController.gigsOfferList=self.gigsOfferList;
+    detailsViewController.offer=self.offer;
+    self.navigationController.navigationBarHidden=NO;
+    [self.navigationController pushViewController:detailsViewController animated:YES];
+    
+}
 @end

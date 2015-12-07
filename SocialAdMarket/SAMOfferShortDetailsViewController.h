@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSShortDescriptionView.h"
+#import "ItemElaborateDetailsViewController.h"
 #import "BSOfferDetails.h"
 #import "AppDelegate.h"
 #import "GigsOfferList.h"
@@ -25,5 +26,8 @@
 @property (readwrite, nonatomic) BSOfferDetails *offer;
 @property (nonatomic, retain) GigsOfferList *gigsOfferList;
 @property (nonatomic , assign) BOOL flagForGigs;
+
+- (IBAction)briefButtonPressed:(UIButton *)sender;
+
 
 @end

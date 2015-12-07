@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSOfferDetails.h"
+#import "detailsTableViewCell.h"
+#import "GigsOfferList.h"
 
-@interface ItemElaborateDetailsViewController : UIViewController
+@interface ItemElaborateDetailsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,strong) IBOutlet UITableView *table;
+@property (readwrite, nonatomic) BSOfferDetails *offer;
+@property (nonatomic, retain) GigsOfferList *gigsOfferList;
+@property BOOL flagForGigs;
+@property (nonatomic,strong) NSMutableArray *dataArray;
 
 @end

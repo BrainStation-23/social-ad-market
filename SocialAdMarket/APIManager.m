@@ -220,6 +220,7 @@ static APIManager* sharedManger = nil;
                 for(NSDictionary *dic in offerListDictionary){
                     
                     BSOfferDetails *offerWithDetails=[[BSOfferDetails alloc] initWithDictionary:dic];
+                    
                     [self.localOfferList addObject:offerWithDetails];
                     
                 }

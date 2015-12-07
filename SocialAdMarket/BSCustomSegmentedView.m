@@ -63,7 +63,7 @@
     UIBezierPath *maskPath;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:button.bounds
                                      byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerTopLeft)
-                                           cornerRadii:CGSizeMake(5.0, 5.0)];
+                                           cornerRadii:CGSizeMake(0, 0)];
     
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
@@ -75,7 +75,7 @@
     UIBezierPath *maskPath;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:button.bounds
                                      byRoundingCorners:(UIRectCornerBottomRight|UIRectCornerTopRight)
-                                           cornerRadii:CGSizeMake(5.0, 5.0)];
+                                           cornerRadii:CGSizeMake(0, 0)];
     
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;

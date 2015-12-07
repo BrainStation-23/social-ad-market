@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45A92C381C10730700451709 /* detailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A92C371C10730700451709 /* detailsTableViewCell.m */; };
 		47014D3A1C082E7B00F90DF9 /* InstagramMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47014D381C082E7B00F90DF9 /* InstagramMediaViewController.m */; };
 		47014D3B1C082E7B00F90DF9 /* InstagramMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47014D391C082E7B00F90DF9 /* InstagramMediaViewController.xib */; };
 		47014D3F1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 47014D3D1C084A2900F90DF9 /* InstagramMediaCollectionViewCell.m */; };
@@ -35,7 +36,6 @@
 		4793DE3F1C0C1E5F00BC11F5 /* r.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE2B1C0C1E5F00BC11F5 /* r.png */; };
 		4793DE401C0C1E5F00BC11F5 /* s.png in Resources */ = {isa = PBXBuildFile; fileRef = 4793DE2C1C0C1E5F00BC11F5 /* s.png */; };
 		47E66D871C071D5300D475C6 /* GigsOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E66D861C071D5300D475C6 /* GigsOfferList.m */; };
-		4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5C08661BD66C460022EE22 /* Images-2.xcassets */; };
 		6C028D211BD4FC0A00CA393C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D201BD4FC0A00CA393C /* main.m */; };
 		6C028D241BD4FC0A00CA393C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C028D231BD4FC0A00CA393C /* AppDelegate.m */; };
 		6C028D2C1BD4FC0A00CA393C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C028D2B1BD4FC0A00CA393C /* Images.xcassets */; };
@@ -120,6 +120,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45A92C361C10730700451709 /* detailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailsTableViewCell.h; sourceTree = "<group>"; };
+		45A92C371C10730700451709 /* detailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailsTableViewCell.m; sourceTree = "<group>"; };
 		47014D371C082E7B00F90DF9 /* InstagramMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramMediaViewController.h; sourceTree = "<group>"; };
 		47014D381C082E7B00F90DF9 /* InstagramMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMediaViewController.m; sourceTree = "<group>"; };
 		47014D391C082E7B00F90DF9 /* InstagramMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramMediaViewController.xib; sourceTree = "<group>"; };
@@ -152,7 +154,6 @@
 		4793DE2C1C0C1E5F00BC11F5 /* s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s.png; sourceTree = "<group>"; };
 		47E66D851C071D5300D475C6 /* GigsOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GigsOfferList.h; sourceTree = "<group>"; };
 		47E66D861C071D5300D475C6 /* GigsOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GigsOfferList.m; sourceTree = "<group>"; };
-		4A5C08661BD66C460022EE22 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		61D32AFBED45A8EF6AEAD48B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6C028D1B1BD4FC0A00CA393C /* SocialAdMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAdMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C028D1F1BD4FC0A00CA393C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -371,7 +372,6 @@
 				6C028D4F1BD4FCAA00CA393C /* View */,
 				6C028D2B1BD4FC0A00CA393C /* Images.xcassets */,
 				6C028D2D1BD4FC0A00CA393C /* LaunchScreen.xib */,
-				4A5C08661BD66C460022EE22 /* Images-2.xcassets */,
 				6C028D1E1BD4FC0A00CA393C /* Supporting Files */,
 			);
 			path = SocialAdMarket;
@@ -541,6 +541,8 @@
 				6C77F9551BE744B9002DF037 /* InboxTableViewCell.h */,
 				6C77F9561BE744B9002DF037 /* InboxTableViewCell.m */,
 				6C028D9F1BD4FE4100CA393C /* SAMTableViewCell.m */,
+				45A92C361C10730700451709 /* detailsTableViewCell.h */,
+				45A92C371C10730700451709 /* detailsTableViewCell.m */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -718,7 +720,7 @@
 		6C028D131BD4FC0A00CA393C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Brainstation-23";
 				TargetAttributes = {
 					6C028D1A1BD4FC0A00CA393C = {
@@ -775,7 +777,6 @@
 				6C028D9C1BD4FDB700CA393C /* Main.storyboard in Resources */,
 				4793DE311C0C1E5F00BC11F5 /* d.png in Resources */,
 				4793DE371C0C1E5F00BC11F5 /* k.png in Resources */,
-				4A5C08671BD66C460022EE22 /* Images-2.xcassets in Resources */,
 				47014D401C084A2900F90DF9 /* InstagramMediaCollectionViewCell.xib in Resources */,
 				4793DE3F1C0C1E5F00BC11F5 /* r.png in Resources */,
 				6C028D2C1BD4FC0A00CA393C /* Images.xcassets in Resources */,
@@ -901,6 +902,7 @@
 				6C77F9541BE74275002DF037 /* SAMMessageViewController.m in Sources */,
 				6C028DD61BD4FED100CA393C /* MKAnnotationView+WebCache.m in Sources */,
 				6C77F93B1BE73D17002DF037 /* InboxDetails.m in Sources */,
+				45A92C381C10730700451709 /* detailsTableViewCell.m in Sources */,
 				6C028D5E1BD4FCF500CA393C /* SwappedOfferDetails.m in Sources */,
 				6C028DDB1BD4FED100CA393C /* SDWebImageDownloader.m in Sources */,
 				6C028DDF1BD4FED100CA393C /* UIButton+WebCache.m in Sources */,
@@ -964,10 +966,12 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -986,6 +990,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "65c1b5ff-9742-4eaa-b7e4-b4810670e2b6";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1007,7 +1012,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1022,6 +1028,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "65c1b5ff-9742-4eaa-b7e4-b4810670e2b6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1032,14 +1039,14 @@
 			baseConfigurationReference = 61D32AFBED45A8EF6AEAD48B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
 				INFOPLIST_FILE = SocialAdMarket/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BS-23.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "65c1b5ff-9742-4eaa-b7e4-b4810670e2b6";
 			};
 			name = Debug;
 		};
@@ -1048,14 +1055,14 @@
 			baseConfigurationReference = 905FA446796BE9AA7D9E202B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brain Station-23 (MG2L3YQ533)";
 				INFOPLIST_FILE = SocialAdMarket/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BS-23.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "65c1b5ff-9742-4eaa-b7e4-b4810670e2b6";
 			};
 			name = Release;
 		};
@@ -1073,6 +1080,7 @@
 				);
 				INFOPLIST_FILE = SocialAdMarketTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bs23.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialAdMarket.app/SocialAdMarket";
 			};
@@ -1088,6 +1096,7 @@
 				);
 				INFOPLIST_FILE = SocialAdMarketTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bs23.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialAdMarket.app/SocialAdMarket";
 			};

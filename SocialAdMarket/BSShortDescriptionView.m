@@ -13,6 +13,8 @@
 -(id)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if(self){
+        self.briefDescriptionLabel.selectable=NO;
+        self.briefDescriptionLabel.editable=NO;
         self.backgroundColor=[UIColor whiteColor];
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, self.bounds.size.width-40, 25)];
         self.titleLabel.backgroundColor = [UIColor clearColor];
@@ -25,7 +27,6 @@
         
         self.briefDescriptionLabel = [[UITextView alloc] initWithFrame:CGRectMake(20, self.titleLabel.bounds.size.height+20, self.bounds.size.width-40, 50)];
         self.briefDescriptionLabel.backgroundColor = [UIColor clearColor];
-        self.briefDescriptionLabel.textAlignment = NSTextAlignmentLeft;
         self.briefDescriptionLabel.textColor = [UIColor grayColor];
         //self.briefDescriptionLabel.numberOfLines = 2;
         //self.briefDescriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
